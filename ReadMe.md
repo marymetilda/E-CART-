@@ -40,3 +40,9 @@
 - @paypal/react-paypal-js
 
 12. install frontend packages
+
+Backend
+
+1. Created schema for user
+2. Created user model
+3. Created asyncHandler middileware
