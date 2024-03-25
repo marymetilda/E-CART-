@@ -9,7 +9,7 @@
 }
 
 /* Intially hide nav-item-name */
-.navname-item- {
+.navname-item-name {
   display: none;
   transition: opacity 0.2s ease-in-out; /* Add opacity transition */
 }
