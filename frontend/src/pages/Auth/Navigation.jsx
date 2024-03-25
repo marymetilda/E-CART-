@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import {
   AiOutlineHome,
   AiOutlineShopping,
@@ -9,15 +9,20 @@ import {
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
+import { useSelector } from "react-redux";
+// import { useLoginMutation } from "../../redux/api/usersApiSlice";
+// import { logout } from "../../redux/features/auth/authSlice";
 
-function Navigation() {
-  const showsidebar = false;
-  // const [dropdownOpen, setDropdownOpen] = useState(false);
+const Navigation = () => {
+  const { userInfo } = useSelector((state) => state.auth);
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   // const [showsidebar, setShowSidebar] = useState(false);
+  const showsidebar = false;
 
-  // const toggleDropdown = () => {
-  //   setDropdownOpen(!dropdownOpen);
-  // };
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
 
   // const toggleSidebar = () => {
   //   setShowSidebar(!showsidebar);
@@ -25,6 +30,21 @@ function Navigation() {
 
   // const closeSidebar = () => {
   //   setShowSidebar(false);
+  // };
+
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
+
+  // const [logoutApiCall] = useLoginMutation();
+
+  // const logoutHnadler = async () => {
+  //   try {
+  //     await logoutApiCall().unwrap();
+  //     dispatch(logout());
+  //     navigate("/login");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
   // };
 
   return (
@@ -64,6 +84,19 @@ function Navigation() {
         </Link>
       </div>
 
+      <div className="relative">
+        <button
+          onClick={toggleDropdown}
+          className="flex text-grey-8000 focus:outline-none"
+        >
+          {userInfo ? (
+            <span className="text-white">{userInfo.username}</span>
+          ) : (
+            <></>
+          )}
+        </button>
+      </div>
+
       <ul>
         <li>
           <Link
@@ -86,6 +119,6 @@ function Navigation() {
       </ul>
     </div>
   );
-}
+};
 
 export default Navigation;
