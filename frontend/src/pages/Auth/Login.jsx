@@ -41,11 +41,11 @@ const Login = () => {
 
   return (
     <div>
-      <section className="pl-[10rem] flex flex-wrap">
-        <div className="mr-[4rem] mt-[5rem]">
+      <section className="pl-[10rem] h-[90vh] flex items-center flex-wrap">
+        <div className="mr-[4rem] mt-[5rem] w-[40%]">
           <h1 className="text-2xl font-semibold mb-4">Sign In</h1>
 
-          <form onSubmit={submitHandler} className="container w-[40rem]">
+          <form onSubmit={submitHandler} className="container w-full">
             <div className="my-[2rem]">
               <label
                 htmlFor="email"
@@ -101,6 +101,12 @@ const Login = () => {
             </p>
           </div>
         </div>
+
+        <img
+          src="https://plus.unsplash.com/premium_photo-1671751035347-e308f0a19b28?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
+          className="w-1/2 xl:block md:hidden sm:hidden rounded-lg"
+        />
       </section>
     </div>
   );
