@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import "./Navigation.css";
 
 function Navigation() {
-  const showsidebar = true;
+  const showsidebar = false;
   // const [dropdownOpen, setDropdownOpen] = useState(false);
   // const [showsidebar, setShowSidebar] = useState(false);
 
