@@ -1,2 +1,4 @@
-export const BASE_URL = "";
-export const USERS_URL = "/api/users";
+const BASE_URL = "";
+const USERS_URL = "/api/users";
+
+export { BASE_URL, USERS_URL };
