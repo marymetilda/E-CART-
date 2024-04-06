@@ -5,6 +5,7 @@ import {
   updateCategory,
   removeCategory,
   listCategory,
+  readCategory,
 } from "../controllers/categoryController.js";
 
 const router = express.Router();
@@ -15,5 +16,6 @@ router
   .route("/:categoryId")
   .delete(authenticate, authorizeAdmin, removeCategory);
 router.route("/categories").get(listCategory);
+router.route("/:id").get(readCategory);
 
 export default router;
