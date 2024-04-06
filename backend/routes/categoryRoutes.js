@@ -4,6 +4,7 @@ import {
   createCategory,
   updateCategory,
   removeCategory,
+  listCategory,
 } from "../controllers/categoryController.js";
 
 const router = express.Router();
@@ -13,5 +14,6 @@ router.route("/:categoryId").put(authenticate, authorizeAdmin, updateCategory);
 router
   .route("/:categoryId")
   .delete(authenticate, authorizeAdmin, removeCategory);
+router.route("/categories").get(listCategory);
 
 export default router;
