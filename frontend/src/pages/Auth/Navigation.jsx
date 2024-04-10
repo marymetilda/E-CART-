@@ -17,20 +17,19 @@ const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  // const [showsidebar, setShowSidebar] = useState(false);
-  const showsidebar = false;
+  const [showsidebar, setShowSidebar] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
-  // const toggleSidebar = () => {
-  //   setShowSidebar(!showsidebar);
-  // };
+  const toggleSidebar = () => {
+    setShowSidebar(!showsidebar);
+  };
 
-  // const closeSidebar = () => {
-  //   setShowSidebar(false);
-  // };
+  const closeSidebar = () => {
+    setShowSidebar(false);
+  };
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
