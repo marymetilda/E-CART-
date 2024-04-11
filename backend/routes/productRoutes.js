@@ -5,14 +5,17 @@ const router = express.Router();
 // controllers
 import {
   addProduct,
+  fetchProducts,
   removeProduct,
   updateProductDetails,
 } from "../controllers/productController.js";
 
 import { authenticate, authorizeAdmin } from "../middlewares/authMiddleware.js";
-import checkId from "../middlewares/checkId.js";
 
-router.route("/").post(authenticate, authorizeAdmin, formidable(), addProduct);
+router
+  .route("/")
+  .post(authenticate, authorizeAdmin, formidable(), addProduct)
+  .get(fetchProducts);
 router
   .route("/:id")
   .put(authenticate, authorizeAdmin, formidable(), updateProductDetails)
