@@ -5,6 +5,7 @@ const router = express.Router();
 // controllers
 import {
   addProduct,
+  fetchAllProducts,
   fetchProductById,
   fetchProducts,
   removeProduct,
@@ -17,6 +18,9 @@ router
   .route("/")
   .post(authenticate, authorizeAdmin, formidable(), addProduct)
   .get(fetchProducts);
+
+router.route("/allproducts").get(fetchAllProducts);
+
 router
   .route("/:id")
   .get(fetchProductById)
