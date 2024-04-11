@@ -5,6 +5,7 @@ const router = express.Router();
 // controllers
 import {
   addProduct,
+  addProductReview,
   fetchAllProducts,
   fetchProductById,
   fetchProducts,
@@ -20,6 +21,9 @@ router
   .get(fetchProducts);
 
 router.route("/allproducts").get(fetchAllProducts);
+router
+  .route("/:id/reviews")
+  .post(authenticate, authorizeAdmin, addProductReview);
 
 router
   .route("/:id")
