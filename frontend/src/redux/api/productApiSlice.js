@@ -50,6 +50,14 @@ export const productApiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
+    uploadProductImage: builder.mutation({
+      query: (data) => ({
+        url: `${UPLOAD_URL}`,
+        method: "POST",
+        body: data,
+      }),
+    }),
+
     deleteProduct: builder.mutation({
       query: (productId) => ({
         url: `${PRODUCT_URL}/ ${productId}`,
@@ -77,3 +85,17 @@ export const productApiSlice = apiSlice.injectEndpoints({
     }),
   }),
 });
+
+export const {
+  useGetProductByIdQuery,
+  useAllProductsQuery,
+  useGetProductDetailsQuery,
+  useGetProductsQuery,
+  useCreateProductMutation,
+  useUpdateProductMutation,
+  useDeleteProductMutation,
+  useCreateReviewMutation,
+  useGetTopProductsQuery,
+  useGetNewProductsQuery,
+  useUploadProductImageMutation,
+} = productApiSlice;
