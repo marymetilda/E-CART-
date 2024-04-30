@@ -28,4 +28,39 @@ const addProduct = asyncHandler(async (req, res) => {
   }
 });
 
-export { addProduct };
+const updateProductDetails = asyncHandler(async (req, res) => {
+  try {
+    const { name, description, price, category, quantity, brand } = req.fields;
+
+    // Validation
+    switch (true) {
+      case !name:
+        return res.json({ error: "Name is required" });
+      case !description:
+        return res.json({ error: "Description is required" });
+      case !price:
+        return res.json({ error: "Price is required" });
+      case !category:
+        return res.json({ error: "Category is required" });
+      case !quantity:
+        return res.json({ error: "Quantity is required" });
+    }
+
+    const product = await Product.findByIdAndUpdate(
+      req.params.id,
+      {
+        ...req.fields,
+      },
+      { new: true }
+    );
+
+    await product.save();
+
+    res.json(product);
+  } catch (error) {
+    console.error(error);
+    res.status(400).json(error.message);
+  }
+});
+
+export { addProduct, updateProductDetails };
