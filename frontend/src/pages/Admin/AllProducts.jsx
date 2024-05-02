@@ -25,7 +25,6 @@ const AllProducts = () => {
 
           <div className="flex flex-wrap justify-around items-center">
             {products.map((product) => {
-              console.log(product.image);
               return (
                 <Link
                   key={product._id}

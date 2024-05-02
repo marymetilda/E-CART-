@@ -100,7 +100,6 @@ const ProductUpdate = () => {
       });
       navigate("/admin/allproductslist");
     } catch (err) {
-      console.log(err);
       toast.error("Delete failed. Try again.", {
         autoClose: 2000,
       });
