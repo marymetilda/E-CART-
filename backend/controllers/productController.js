@@ -148,7 +148,7 @@ const addProductReview = asyncHandler(async (req, res) => {
 
       const review = {
         name: req.user.username,
-        rating: Number(rating),
+        rating,
         comment,
         user: req.user._id,
       };
@@ -158,7 +158,7 @@ const addProductReview = asyncHandler(async (req, res) => {
       product.numReviews = product.reviews.length;
 
       product.rating =
-        product.reviews.reduce((acc, item) => item.rating + acc, 0) /
+        product.reviews.reduce((acc, item) => parseInt(item.rating) + acc, 0) /
         product.reviews.length;
 
       await product.save();
