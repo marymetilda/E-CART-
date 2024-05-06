@@ -32,6 +32,10 @@ app.use("/api/products", productRoutes);
 app.use("/api/upload", uploadRoutes);
 app.use("/api/orders", orderRoutes);
 
+app.length("/api/config/paypal", (req, res) => {
+  res.send({ clientId: process.env.PAYPAL_CLIENT_ID });
+});
+
 app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
 
 app.listen(port, () => console.log(`Server running on prot ${port}`));
