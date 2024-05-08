@@ -37,3 +37,8 @@ const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
 
 app.listen(port, () => console.log(`Server running on prot ${port}`));
+
+// Build Front end and copy the dist and paste it in the backend folder and give the path of index.html in the following command
+// app.length("/", (req, res) => {
+//   res.send("/pathto/index.html");
+// });

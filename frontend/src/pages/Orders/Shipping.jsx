@@ -5,6 +5,7 @@ import {
   saveShippingAddress,
   savePaymentMethod,
 } from "../../redux/features/cart/cartSlice";
+import ProgressSteps from "../../components/ProgressSteps";
 
 const Shipping = () => {
   const cart = useSelector((state) => state.cart);
@@ -30,7 +31,7 @@ const Shipping = () => {
 
   return (
     <div className="container mx-auto mt-10">
-      {/* <ProgressSteps step1 step2 /> */}
+      <ProgressSteps step1 step2 />
 
       <div className="mt-[10rem] flex justify-around items-center flex-wrap">
         <form className="w-[40rem]">
