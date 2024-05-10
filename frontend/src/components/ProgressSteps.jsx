@@ -22,7 +22,7 @@ const ProgressSteps = ({ step1, step2, step3 }) => {
           ""
         )}
 
-        <div className={`{${step3 ? "text-green-500" : "text-gray-300"}}`}>
+        <div className={`${step3 ? "text-green-500" : "text-gray-300"}`}>
           <span className={`${!step3 ? "ml-[10rem]" : ""}`}>Summary</span>
           {step1 && step2 && step3 ? (
             <div className="mt-2 text-lg text-center">✅</div>
