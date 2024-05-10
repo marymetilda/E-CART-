@@ -1,4 +1,3 @@
-import { format } from "prettier";
 import Order from "../models/orderModel.js";
 import Product from "../models/productModel.js";
 
@@ -116,7 +115,7 @@ const calculateTotalSales = async (req, res) => {
   }
 };
 
-const calculateTotalSalesByDate = async (req, res) => {
+const calcualteTotalSalesByDate = async (req, res) => {
   try {
     const salesByDate = await Order.aggregate([
       {
@@ -127,10 +126,7 @@ const calculateTotalSalesByDate = async (req, res) => {
       {
         $group: {
           _id: {
-            $dateToString: {
-              format: "%Y-%m-%d",
-              date: "$paidAt",
-            },
+            $dateToString: { format: "%Y-%m-%d", date: "$paidAt" },
           },
           totalSales: { $sum: "$totalPrice" },
         },
@@ -211,7 +207,7 @@ export {
   getUserOrders,
   countTotalOrders,
   calculateTotalSales,
-  calculateTotalSalesByDate,
+  calcualteTotalSalesByDate,
   findOrderById,
   markOrderAsPaid,
   markOrderAsDelivered,
