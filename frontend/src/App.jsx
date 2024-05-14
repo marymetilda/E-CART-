@@ -8,7 +8,7 @@ function App() {
     <div className="bg-black min-h-screen">
       <ToastContainer />
       <Navigation />
-      <main className="py-3">
+      <main className="py-3 px-6">
         <Outlet />
       </main>
     </div>
