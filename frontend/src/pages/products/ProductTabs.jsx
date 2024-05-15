@@ -28,8 +28,8 @@ const ProductTabs = ({
   };
 
   return (
-    <div className="flex flex-col md:flex-row">
-      <section className="mr-[5rem]">
+    <div className="flex flex-col w-full text-center lg:flex-row">
+      <section className="lg:mr-[5rem] flex lg:flex-col">
         <div
           className={`flex-1 p-4 cursor-pointer text-lg ${activeTab === 1 ? "font-bold" : ""}`}
           onClick={() => handleTabClick(1)}
@@ -56,7 +56,10 @@ const ProductTabs = ({
         {activeTab === 1 && (
           <div className="mt-4">
             {userInfo ? (
-              <form onSubmit={submitHandler}>
+              <form
+                className="bg-pink-950 p-4 rounded-lg"
+                onSubmit={submitHandler}
+              >
                 <div className="my-2">
                   <label htmlFor="rating" className="block text-xl mb-2">
                     Rating
@@ -67,7 +70,7 @@ const ProductTabs = ({
                     required
                     value={rating}
                     onChange={(e) => setRating(e.target.value)}
-                    className="p-2 border rounded-lg xl:w-[40rem] text-black"
+                    className="p-2 border rounded-lg w-full xl:w-[40rem] text-black"
                   >
                     <option value="">Select</option>
                     <option value="1">Inferior</option>
@@ -89,14 +92,14 @@ const ProductTabs = ({
                     required
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
-                    className="p-2 border rounded-lg xl:w-[40rem] text-white"
+                    className="p-2 border rounded-lg w-full xl:w-[40rem] text-white"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loadingProductReview}
-                  className="bg-pink-600 text-white py-2 px-4 rounded-lg"
+                  className="bg-pink-600 text-white py-2 px-4 rounded-lg w-full lg:w-fit"
                 >
                   Submit
                 </button>
@@ -112,7 +115,7 @@ const ProductTabs = ({
 
       <section>
         {activeTab === 2 && (
-          <>
+          <div className="bg-pink-950 p-4 rounded-lg">
             <div>{product.reviews.length === 0 && <p>No Reviews</p>}</div>
 
             <div>
@@ -120,7 +123,7 @@ const ProductTabs = ({
                 return (
                   <div
                     key={review._id}
-                    className="bg-[#1A1A1A] p-4 rounded-lg xl:ml-[2rem] sm:ml-[0rem] xl:w-[50rem] sm:w-[24rem] mb-5"
+                    className="bg-[#1A1A1A] pt-12 p-4 lg:p-4 rounded-lg xl:ml-[2rem] sm:ml-[0rem] w-full xl:w-[50rem] mb-5"
                   >
                     <div className="flex justify-between">
                       <strong className="text-[#b0b0b0]">{review.name}</strong>
@@ -135,13 +138,13 @@ const ProductTabs = ({
                 );
               })}
             </div>
-          </>
+          </div>
         )}
       </section>
 
       <section>
         {activeTab === 3 && (
-          <section className="ml-[4rem] flex flex-wrap">
+          <div className="lg:ml-[4rem] pt-4 lg:pt-0 flex flex-wrap items-center justify-center">
             {!data ? (
               <Loader />
             ) : (
@@ -151,7 +154,7 @@ const ProductTabs = ({
                 </div>
               ))
             )}
-          </section>
+          </div>
         )}
       </section>
     </div>
