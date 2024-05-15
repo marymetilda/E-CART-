@@ -18,3 +18,11 @@
   display: block;
   opacity: 1;
 }
+
+@media screen and (min-width: 1024px) {
+  #navigation-container {
+    width: 8%;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden; /* Hide overflowing content during transition */
+  }
+}
