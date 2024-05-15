@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AiOutlineHome,
   AiOutlineShopping,
@@ -39,7 +39,7 @@ const dropdownItems = [
   },
 ];
 
-const Navigation = ({ handleModal }) => {
+const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
   const { cartItems } = useSelector((state) => state.cart);
 
@@ -66,8 +66,15 @@ const Navigation = ({ handleModal }) => {
     setIsModalOpen(!isModalOpen);
   };
 
+  useEffect(() => {
+    if (isModalOpen) {
+      document.getElementById("wrapper").style.overflowY = "hidden";
+    } else {
+      document.getElementById("wrapper").style.overflowY = "auto";
+    }
+  }, [isModalOpen]);
+
   const handleModalState = () => {
-    handleModal();
     setIsModalOpen(!isModalOpen);
   };
 
