@@ -91,7 +91,7 @@ const Navigation = () => {
     <>
       <div
         style={{ zIndex: 999 }}
-        className={`hidden lg:flex flex-col justify-between p-4 text-white bg-black w-[4%] hover:w-[15%] h-[100vh] absolute`}
+        className={`hidden lg:flex flex-col justify-between p-4 text-white bg-sky-800 w-[4%] hover:w-[15%] h-[100vh] absolute`}
         id="navigation-container"
       >
         <div className="flex flex-col justify-center space-y-4">
@@ -118,7 +118,7 @@ const Navigation = () => {
             <div className="absolute top-9">
               {cartItems.length > 0 && (
                 <span>
-                  <div className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
+                  <div className="px-1 py-0 text-sm text-white bg-sky-500 rounded-full">
                     {cartItems.reduce((a, c) => a + parseInt(c.qty), 0)}
                   </div>
                 </span>
@@ -248,7 +248,7 @@ const Navigation = () => {
           )}
         </div>
         {isModalOpen && (
-          <div className="w-full h-full bg-pink-900 flex-1 flex flex-col items-center justify-between pb-12">
+          <div className="w-full h-full bg-sky-900 flex-1 flex flex-col items-center justify-between pb-12">
             <div className="flex flex-col items-center justify-center space-y-4">
               <Link
                 onClick={() => {
@@ -285,7 +285,7 @@ const Navigation = () => {
                 <div className="absolute top-9">
                   {cartItems.length > 0 && (
                     <span>
-                      <div className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
+                      <div className="px-1 py-0 text-sm text-white bg-sky-500 rounded-full">
                         {cartItems.reduce((a, c) => a + parseInt(c.qty), 0)}
                       </div>
                     </span>

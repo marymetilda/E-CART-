@@ -31,7 +31,7 @@ const AllProducts = () => {
                   to={`/admin/product/update/${product._id}`}
                   className="block mb-4 overflow-hidden"
                 >
-                  <div className="flex p-4 border-pink-950 border-2 rounded-lg shadow-pink-400 shadow-inner">
+                  <div className="flex p-4 border-sky-950 border-2 rounded-lg shadow-sky-400 shadow-inner">
                     <img
                       src={product.image}
                       alt={product.name}
@@ -56,7 +56,7 @@ const AllProducts = () => {
                       <div className="flex flex-col md:flex-row justify-between">
                         <Link
                           to={`/admin/product/update/${product._id}`}
-                          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-pink-700 rounded-lg hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 dark:bg-pink-500 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 dark:bg-sky-500 dark:hover:bg-sky-700 dark:focus:ring-sky-800"
                         >
                           Update Product
                           <svg

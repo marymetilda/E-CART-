@@ -107,7 +107,7 @@ const CategoryList = () => {
           {categories?.map((category) => (
             <div key={category._id}>
               <button
-                className="border border-pink-500 text-pink-500 py-2 px-4 rounded-lg m-3 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
+                className="border border-sky-500 text-sky-500 py-2 px-4 rounded-lg m-3 hover:bg-sky-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
                 onClick={() => {
                   {
                     setModalVisible(true);

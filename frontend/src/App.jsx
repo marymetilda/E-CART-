@@ -7,7 +7,7 @@ function App() {
   return (
     <div
       id="wrapper"
-      className="bg-black min-h-screen max-h-screen overflow-auto"
+      className="bg-sky-950 min-h-screen max-h-screen overflow-auto"
     >
       <ToastContainer />
       <Navigation />
