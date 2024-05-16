@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
+import { MdOutlineAdminPanelSettings } from "react-icons/md";
 
 const AdminMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,22 +15,18 @@ const AdminMenu = () => {
       <button
         className={`${
           isMenuOpen ? "top-2 right-2" : "top-5 right-7"
-        } bg-[#151515] p-2 fixed rounded-lg`}
+        } bg-[#151515] p-2 fixed rounded-lg z-40`}
         onClick={toggleMenu}
       >
         {isMenuOpen ? (
           <FaTimes color="white" />
         ) : (
-          <>
-            <div className="w-6 h-0.5 bg-white my-1"></div>
-            <div className="w-6 h-0.5 bg-white my-1"></div>
-            <div className="w-6 h-0.5 bg-white my-1"></div>
-          </>
+          <MdOutlineAdminPanelSettings size={30} />
         )}
       </button>
 
       {isMenuOpen && (
-        <section className="bg-[#151515] p-4 fixed right-7 top-5">
+        <section className="bg-[#151515] p-4 fixed right-7 top-5 z-50">
           <ul className="list-none mt-2">
             <li>
               <NavLink
