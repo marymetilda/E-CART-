@@ -47,14 +47,11 @@ const Register = () => {
   };
 
   return (
-    <section className="pl-[10rem] h-[90vh]  flex items-center flex-wrap">
-      <div className="mr-[4rem] mt-[5rem] w-[40%]">
+    <section className="lg:pl-[6vw] mt-[1vh] h-full min-h-[80vh] flex flex-col-reverse items-start justify-end lg:flex-row lg:items-center lg:justify-center lg:flex-wrap">
+      <div className="lg:pr-[4rem] mt-[1rem] lg:mt-[5rem] w-full lg:w-2/5">
         <h1 className="text-2xl text-white font-semibold mb-4">Register</h1>
 
-        <form
-          onSubmit={submitHandler}
-          className="container w-full flex flex-col gap-4"
-        >
+        <form onSubmit={submitHandler} className="container w-full">
           <div className="my-[2rem">
             <label
               htmlFor="name"
@@ -70,32 +67,32 @@ const Register = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-          <div className="my-[2rem">
+          <div className="my-[2rem]">
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-white"
+              className="block text-sm text-white font-medium"
             >
-              Email
+              Email Address
             </label>
             <input
               type="email"
               id="email"
-              className="mt-1 p-2 border rounded w-full bg-gray-700 text-white"
+              className="mt-1 p-2 border rounded w-full bg-gray-700"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="my-[2rem">
+          <div className="my-[2rem]">
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-white"
+              className="block text-sm text-white font-medium"
             >
               Password
             </label>
             <input
               type="password"
               id="password"
-              className="mt-1 p-2 border rounded w-full bg-gray-700 text-white"
+              className="mt-1 p-2 border rounded w-full bg-gray-700"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -118,10 +115,11 @@ const Register = () => {
           <button
             disabled={isLoading}
             type="submit"
-            className="w-fit bg-pink-500 text-white px-4 py-2 rounded cursor-pointer my-[1rem]"
+            className="bg-pink-500 text-white px-4 py-2 rounded cursor-pointer my-[1rem]"
           >
             {isLoading ? "Registering..." : "Register"}
           </button>
+
           {isLoading && <Loader />}
         </form>
 
@@ -141,7 +139,7 @@ const Register = () => {
       <img
         src="https://images.unsplash.com/photo-1618172193763-c511deb635ca?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt=""
-        className="w-1/2 xl:block md:hidden sm:hidden rounded-lg"
+        className="w-full lg:w-1/2 rounded-lg"
       />
     </section>
   );
