@@ -63,9 +63,9 @@ const UserList = () => {
           {error?.data.message || error.message}
         </Message>
       ) : (
-        <div className="flex flex-col md:flex-row text-white">
+        <div className="flex flex-col md:flex-row text-white overflow-auto">
           * <AdminMenu />
-          <table className="w-full md:w-4/5 mx-auto">
+          <table className="w-full md:w-4/5 mx-auto max-w-[50rem]">
             <thead>
               <tr>
                 <th className="px-4 py-2 text-left text-white">ID</th>
