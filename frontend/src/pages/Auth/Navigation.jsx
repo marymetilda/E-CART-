@@ -67,6 +67,7 @@ const Navigation = () => {
       console.log(error);
     }
     setIsModalOpen(!isModalOpen);
+    setDropdownOpen(!dropdownOpen);
   };
 
   useEffect(() => {
@@ -80,6 +81,9 @@ const Navigation = () => {
   const handleModalState = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  const shouldShowCartIcon =
+    !isModalOpen && location.pathname !== "/cart" && !isAdminRoute;
 
   return (
     <>
@@ -168,6 +172,7 @@ const Navigation = () => {
                   {dropdownItems.map((item) => (
                     <li key={item.text}>
                       <Link
+                        onClick={() => setDropdownOpen(!dropdownOpen)}
                         to={item.url}
                         className="block px-4 py-2 hover:bg-gray-100"
                       >
@@ -179,6 +184,7 @@ const Navigation = () => {
               )}
               <li>
                 <Link
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
                   to="/profile"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
@@ -233,7 +239,7 @@ const Navigation = () => {
               <GiHamburgerMenu size={26} />
             )}
           </button>
-          {!isModalOpen && location.pathname !== "/cart" && !isAdminRoute && (
+          {shouldShowCartIcon && (
             <Link to="/cart" className="cursor-pointer">
               <AiOutlineShoppingCart size={26} />
             </Link>
