@@ -9,7 +9,7 @@ import {
 } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navigation.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/api/usersApiSlice";
@@ -52,6 +52,9 @@ const Navigation = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isAdminRoute = location.pathname.split("/")[1] === "admin";
 
   const [logoutApiCall] = useLogoutMutation();
 
@@ -222,7 +225,7 @@ const Navigation = () => {
       <div
         className={`flex h-full flex-col px-8 pb-8 ${isModalOpen && "min-h-screen"}`}
       >
-        <div className="sticky top-0 z-50 flex w-full items-center justify-between py-5">
+        <div className="sticky top-0 z-30 flex w-full items-center justify-between py-5">
           <button onClick={handleModalState}>
             {isModalOpen ? (
               <AiOutlineClose size={26} />
@@ -230,7 +233,7 @@ const Navigation = () => {
               <GiHamburgerMenu size={26} />
             )}
           </button>
-          {!isModalOpen && (
+          {!isModalOpen && location.pathname !== "/cart" && !isAdminRoute && (
             <Link to="/cart" className="cursor-pointer">
               <AiOutlineShoppingCart size={26} />
             </Link>
