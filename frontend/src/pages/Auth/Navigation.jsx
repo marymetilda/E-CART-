@@ -14,6 +14,7 @@ import "./Navigation.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/api/usersApiSlice";
 import { logout } from "../../redux/features/auth/authSlice";
+import { clearCartItems } from "../../redux/features/cart/cartSlice";
 import FavoritesCount from "../products/FavoritesCount";
 
 const dropdownItems = [
@@ -62,6 +63,7 @@ const Navigation = () => {
     try {
       await logoutApiCall().unwrap();
       dispatch(logout());
+      dispatch(clearCartItems());
       navigate("/login");
     } catch (error) {
       console.log(error);
