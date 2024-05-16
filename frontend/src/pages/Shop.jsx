@@ -94,7 +94,7 @@ const Shop = () => {
           </button>
           {isFiltersOpen && (
             <div className="bg-[#151515] p-3 mt-2 mb-2 h-fit w-full lg:hidden">
-              <h2 className="text-center py-2 bg-black rounded-full mb-2">
+              <h2 className="text-center py-2 bg-sky-800 rounded-full mb-2">
                 Filter By Categories
               </h2>
 
@@ -106,11 +106,11 @@ const Shop = () => {
                         type="checkbox"
                         id="red-checkbox"
                         onChange={(e) => handleCheck(e.target.checked, c._id)}
-                        className="w-4 h-4 text-pink-600 bg-gray-100 border-gray-100 rounded focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-50 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        className="w-4 h-4 text-sky-600 bg-gray-100 border-gray-100 rounded focus:ring-sky-500 dark:focus:ring-sky-600 dark:ring-offset-gray-50 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                       />
 
                       <label
-                        htmlFor="pink-checkbox"
+                        htmlFor="sky-checkbox"
                         className="ml-2 text-sm font-medium text-white dark:text-gray-300"
                       >
                         {c.name}
@@ -120,7 +120,7 @@ const Shop = () => {
                 ))}
               </div>
 
-              <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+              <h2 className="h4 text-center py-2 bg-sky-800 rounded-full mb-2">
                 Filter By Brands
               </h2>
 
@@ -133,11 +133,11 @@ const Shop = () => {
                         id={brand}
                         name="brand"
                         onChange={() => handleBrandClick(brand)}
-                        className="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        className="w-4 h-4 text-sky-400 bg-gray-100 border-gray-300 focus:ring-sky-500 dark:focus:ring-sky-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                       />
 
                       <label
-                        htmlFor="pink-radio"
+                        htmlFor="sky-radio"
                         className="ml-2 text-sm font-medium text-white dark:text-gray-300"
                       >
                         {brand}
@@ -147,7 +147,7 @@ const Shop = () => {
                 ))}
               </div>
 
-              <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+              <h2 className="h4 text-center py-2 bg-sky-800 rounded-full mb-2">
                 Filter By Price
               </h2>
 
@@ -157,7 +157,7 @@ const Shop = () => {
                   placeholder="Enter Price"
                   value={priceFilter}
                   onChange={handlePriceChange}
-                  className="w-full px-3 py-2 placeholder:text-gray-400 border rounded-lg outline-none focus:outline-none focus:ring focus:border-pink-300 bg-gray-700"
+                  className="w-full px-3 py-2 placeholder:text-gray-400 border rounded-lg outline-none focus:outline-none focus:ring focus:border-sky-300 bg-gray-700"
                 />
               </div>
 
@@ -172,7 +172,7 @@ const Shop = () => {
             </div>
           )}
           <div className="hidden lg:block bg-[#151515] p-3 mt-2 mb-2 h-fit min-h-[90vh]">
-            <h2 className="text-center py-2 bg-black rounded-full mb-2">
+            <h2 className="text-center py-2 bg-sky-800 rounded-full mb-2">
               Filter By Categories
             </h2>
 
@@ -184,11 +184,11 @@ const Shop = () => {
                       type="checkbox"
                       id="red-checkbox"
                       onChange={(e) => handleCheck(e.target.checked, c._id)}
-                      className="w-4 h-4 text-pink-600 bg-gray-100 border-gray-100 rounded focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-50 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      className="w-4 h-4 text-sky-600 bg-gray-100 border-gray-100 rounded focus:ring-sky-500 dark:focus:ring-sky-600 dark:ring-offset-gray-50 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     />
 
                     <label
-                      htmlFor="pink-checkbox"
+                      htmlFor="sky-checkbox"
                       className="ml-2 text-sm font-medium text-white dark:text-gray-300"
                     >
                       {c.name}
@@ -198,7 +198,7 @@ const Shop = () => {
               ))}
             </div>
 
-            <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+            <h2 className="h4 text-center py-2 bg-sky-800 rounded-full mb-2">
               Filter By Brands
             </h2>
 
@@ -211,11 +211,11 @@ const Shop = () => {
                       id={brand}
                       name="brand"
                       onChange={() => handleBrandClick(brand)}
-                      className="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      className="w-4 h-4 text-sky-400 bg-gray-100 border-gray-300 focus:ring-sky-500 dark:focus:ring-sky-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     />
 
                     <label
-                      htmlFor="pink-radio"
+                      htmlFor="sky-radio"
                       className="ml-2 text-sm font-medium text-white dark:text-gray-300"
                     >
                       {brand}
@@ -225,7 +225,7 @@ const Shop = () => {
               ))}
             </div>
 
-            <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+            <h2 className="h4 text-center py-2 bg-sky-800 rounded-full mb-2">
               Filter By Price
             </h2>
 
@@ -235,7 +235,7 @@ const Shop = () => {
                 placeholder="Enter Price"
                 value={priceFilter}
                 onChange={handlePriceChange}
-                className="w-full px-3 py-2 placeholder:text-gray-400 border rounded-lg outline-none focus:outline-none focus:ring focus:border-pink-300 bg-gray-700"
+                className="w-full px-3 py-2 placeholder:text-gray-400 border rounded-lg outline-none focus:outline-none focus:ring focus:border-sky-300 bg-gray-700"
               />
             </div>
 
