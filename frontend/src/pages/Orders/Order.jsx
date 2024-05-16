@@ -90,8 +90,8 @@ const Order = () => {
   ) : error ? (
     <Message variant="danger">{error.data.message}</Message>
   ) : (
-    <div className="container flex flex-col ml-[10rem] md:flex-row">
-      <div className="md:w-2/3 pr-4">
+    <div className="w-full flex flex-col lg:pl-[6vw] lg:flex-row">
+      <div className="w-full lg:w-2/3 pr-4">
         <div className="border-gray-300 mt-5 pb-4 mb-5">
           {order.orderItems.length === 0 ? (
             <Message>Order is empty</Message>
