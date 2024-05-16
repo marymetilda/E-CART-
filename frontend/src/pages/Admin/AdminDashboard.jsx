@@ -135,7 +135,12 @@ const AdminDashboard = () => {
         </div>
 
         <div className="lg:pl-[6vw] mt-[4rem] w-full h-fit">
-          <Chart options={state.options} series={state.series} type="line" />
+          <Chart
+            options={state.options}
+            series={state.series}
+            type="line"
+            width="80%"
+          />
         </div>
         <div className="lg:pl-[6vw] mt-[4rem] overflow-x-auto">
           <OrderList />
