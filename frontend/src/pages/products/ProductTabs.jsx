@@ -29,22 +29,22 @@ const ProductTabs = ({
 
   return (
     <div className="flex flex-col w-full text-center lg:flex-row">
-      <section className="lg:mr-[5rem] flex lg:flex-col">
+      <section className="lg:mr-[5rem] flex flex-col gap-4">
         <div
-          className={`flex-1 p-4 cursor-pointer text-lg ${activeTab === 1 ? "font-bold" : ""}`}
+          className={`p-4 cursor-pointer text-lg whitespace-nowrap h-fit bg-slate-700 rounded-lg ${activeTab === 1 ? "font-bold bg-slate-500 shadow-[inset_0px_0px_10px_0px_#cbd5e0]" : ""}`}
           onClick={() => handleTabClick(1)}
         >
           Write Your Review
         </div>
 
         <div
-          className={`flex-1 p-4 cursor-pointer text-lg ${activeTab === 2 ? "font-bold" : ""}`}
+          className={`p-4 cursor-pointer text-lg whitespace-nowrap bg-slate-700 rounded-lg ${activeTab === 2 ? "font-bold bg-slate-500 shadow-[inset_0px_0px_10px_0px_#cbd5e0]" : ""}`}
           onClick={() => handleTabClick(2)}
         >
           All Reviews
         </div>
         <div
-          className={`flex-1 p-4 cursor-pointer text-lg ${activeTab === 3 ? "font-bold" : ""}`}
+          className={`p-4 cursor-pointer text-lg whitespace-nowrap bg-slate-700 rounded-lg ${activeTab === 3 ? "font-bold bg-slate-500 shadow-[inset_0px_0px_10px_0px_#cbd5e0]" : ""}`}
           onClick={() => handleTabClick(3)}
         >
           Related Products
@@ -99,15 +99,17 @@ const ProductTabs = ({
                 <button
                   type="submit"
                   disabled={loadingProductReview}
-                  className="bg-sky-600 text-white py-2 px-4 rounded-lg w-full lg:w-fit"
+                  className="bg-slate-600 text-white py-2 px-4 rounded-lg w-full lg:w-fit"
                 >
                   Submit
                 </button>
               </form>
             ) : (
-              <p>
-                Please <Link to="/login">sign in</Link> to write a review
-              </p>
+              <div className="h-40 w-full lg:w-[50vw] bg-slate-600 text-center flex items-center justify-center rounded-lg">
+                <p>
+                  Please <Link to="/login">sign in</Link> to write a review
+                </p>
+              </div>
             )}
           </div>
         )}
@@ -115,15 +117,21 @@ const ProductTabs = ({
 
       <section>
         {activeTab === 2 && (
-          <div className="bg-sky-950 p-4 rounded-lg">
-            <div>{product.reviews.length === 0 && <p>No Reviews</p>}</div>
+          <div className="bg-slate-600 p-4 rounded-lg">
+            <div>
+              {product.reviews.length === 0 && (
+                <div className="h-40 w-[50vw] text-center flex items-center justify-center rounded-lg">
+                  <p>No Reviews</p>
+                </div>
+              )}
+            </div>
 
             <div>
               {product.reviews.map((review) => {
                 return (
                   <div
                     key={review._id}
-                    className="bg-[#1A1A1A] pt-12 p-4 lg:p-4 rounded-lg xl:ml-[2rem] sm:ml-[0rem] w-full xl:w-[50rem] mb-5"
+                    className="bg-[#1A1A1A] pt-12 p-4 lg:p-4 rounded-lg xl:ml-[2rem] sm:ml-[0rem] w-full lg:w-[50vw] mb-5"
                   >
                     <div className="flex justify-between">
                       <strong className="text-[#b0b0b0]">{review.name}</strong>
@@ -133,7 +141,7 @@ const ProductTabs = ({
                     </div>
 
                     <p className="my4"> {review.comment}</p>
-                    <Ratings value={review.rating} />
+                    <Ratings color="yellow-300" value={review.rating} />
                   </div>
                 );
               })}
@@ -144,7 +152,7 @@ const ProductTabs = ({
 
       <section>
         {activeTab === 3 && (
-          <div className="lg:ml-[4rem] pt-4 lg:pt-0 flex flex-wrap items-center justify-center">
+          <div className="lg:ml-[4rem] pt-4 lg:pt-0 flex flex-wrap items-center justify-center lg:w-[50vw]">
             {!data ? (
               <Loader />
             ) : (
