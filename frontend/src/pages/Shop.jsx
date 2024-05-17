@@ -264,7 +264,7 @@ const Shop = () => {
                 </div>
               </div>
             )}
-            <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 pt-4 lg:pt-0">
+            <div className="flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3 gap-x-2 pt-4 lg:pt-0">
               {products.length === 0 ? (
                 <Loader />
               ) : (

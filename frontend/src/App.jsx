@@ -11,7 +11,7 @@ function App() {
     >
       <ToastContainer />
       <Navigation />
-      <main className="lg:py-3 px-6 flex flex-col">
+      <main className="lg:py-3 px-6 lg:px-0 flex flex-col">
         <Outlet />
       </main>
     </div>
