@@ -231,7 +231,7 @@ const Navigation = () => {
       </div>
 
       <div
-        className={`flex h-full flex-col px-8 pb-8 lg:hidden ${isModalOpen && "min-h-screen"}`}
+        className={`flex h-full flex-col px-8 lg:hidden ${isModalOpen && "min-h-screen"}`}
       >
         <div className="sticky top-0 z-30 flex w-full items-center justify-between py-5">
           <button onClick={handleModalState}>
