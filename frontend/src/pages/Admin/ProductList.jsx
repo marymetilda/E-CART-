@@ -75,7 +75,7 @@ const ProductList = () => {
       <AdminMenu />
       <div className="md:w-full p-3">
         <div className="text-2xl font-semibold mb-6 text-center">
-          Create Product
+          Add Product
         </div>
 
         {imageUrl && (

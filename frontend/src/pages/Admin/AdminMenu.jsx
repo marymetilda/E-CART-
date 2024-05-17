@@ -60,7 +60,7 @@ const AdminMenu = () => {
                   color: isActive ? "greenyellow" : "white",
                 })}
               >
-                Create Product
+                Add Product
               </NavLink>
             </li>
 
