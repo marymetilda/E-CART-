@@ -91,7 +91,7 @@ const Navigation = () => {
     <>
       <div
         style={{ zIndex: 999 }}
-        className={`hidden lg:flex flex-col justify-between p-4 text-white bg-sky-800 w-[4%] hover:w-[15%] h-[100vh] absolute`}
+        className={`hidden lg:flex flex-col justify-between p-4 text-white bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-500 to-slate-900 w-[4%] hover:w-[15%] h-[100vh] absolute`}
         id="navigation-container"
       >
         <div className="flex flex-col justify-center space-y-4">
@@ -231,7 +231,7 @@ const Navigation = () => {
       </div>
 
       <div
-        className={`flex h-full flex-col px-8 pb-8 ${isModalOpen && "min-h-screen"}`}
+        className={`flex h-full flex-col px-8 pb-8 lg:hidden ${isModalOpen && "min-h-screen"}`}
       >
         <div className="sticky top-0 z-30 flex w-full items-center justify-between py-5">
           <button onClick={handleModalState}>
