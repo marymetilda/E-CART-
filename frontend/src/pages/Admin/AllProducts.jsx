@@ -17,9 +17,19 @@ const AllProducts = () => {
 
   return (
     <div className="lg:pl-[6vw]">
+      <div className="w-full lg:py-4">
+        <Link to="/">
+          <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
+            INFINITY
+          </p>
+        </Link>
+        <p className="text-center lg:text-left text-sm">
+          Give you infinite meanings in a limited amount of time!
+        </p>
+      </div>
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-col items-center">
-          <div className="ml-[2rem] text-xl font-bold h-12">
+          <div className="ml-[2rem] text-4xl font-bold pb-12">
             All Products ({products.length})
           </div>
 
@@ -31,7 +41,7 @@ const AllProducts = () => {
                   to={`/admin/product/update/${product._id}`}
                   className="block mb-4 overflow-hidden"
                 >
-                  <div className="flex p-4 border-sky-950 border-2 rounded-lg shadow-sky-400 shadow-inner">
+                  <div className="flex p-4 rounded-lg shadow-slate-400 shadow-inner">
                     <img
                       src={product.image}
                       alt={product.name}
@@ -56,7 +66,7 @@ const AllProducts = () => {
                       <div className="flex flex-col md:flex-row justify-between">
                         <Link
                           to={`/admin/product/update/${product._id}`}
-                          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 dark:bg-sky-500 dark:hover:bg-sky-700 dark:focus:ring-sky-800"
+                          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-slate-700 rounded-lg hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 dark:bg-slate-500 dark:hover:bg-slate-700 dark:focus:ring-slate-800"
                         >
                           Update Product
                           <svg
