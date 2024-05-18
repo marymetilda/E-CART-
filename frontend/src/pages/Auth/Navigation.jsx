@@ -167,7 +167,7 @@ const Navigation = () => {
 
           {dropdownOpen && userInfo && (
             <ul
-              className={`absolute right-0 mt-2 mr-14 space-y-2 bg-white text-gray-600 ${!userInfo.isAdmin ? "-top-20" : "-top-80"}`}
+              className={`absolute right-0 mt-2 mr-14 space-y-2 bg-slate-500 text-white ${!userInfo.isAdmin ? "-top-20" : "-top-80"}`}
             >
               {userInfo.isAdmin && (
                 <>
@@ -176,7 +176,7 @@ const Navigation = () => {
                       <Link
                         onClick={() => setDropdownOpen(!dropdownOpen)}
                         to={item.url}
-                        className="block px-4 py-2 hover:bg-gray-100"
+                        className="block px-4 py-2 hover:bg-slate-600 text-white"
                       >
                         {item.text}
                       </Link>
@@ -188,7 +188,7 @@ const Navigation = () => {
                 <Link
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   to="/profile"
-                  className="block px-4 py-2 hover:bg-gray-100"
+                  className="block px-4 py-2 hover:bg-slate-600"
                 >
                   Profile
                 </Link>
@@ -197,7 +197,7 @@ const Navigation = () => {
                 <Link
                   onClick={logoutHandler}
                   to="/admin/logout"
-                  className="block px-4 py-2 hover:bg-gray-100"
+                  className="block px-4 py-2 hover:bg-slate-600"
                 >
                   Logout
                 </Link>
@@ -285,7 +285,7 @@ const Navigation = () => {
                 <div className="absolute top-9">
                   {cartItems.length > 0 && (
                     <span>
-                      <div className="px-1 py-0 text-sm text-white bg-sky-500 rounded-full">
+                      <div className="px-1 py-0 text-sm text-white bg-slate-400 rounded-full">
                         {cartItems.reduce((a, c) => a + parseInt(c.qty), 0)}
                       </div>
                     </span>
@@ -336,7 +336,7 @@ const Navigation = () => {
 
               {dropdownOpen && userInfo && (
                 <ul
-                  className={`absolute mt-2 mr-14 space-y-2 bg-white text-gray-600 ${!userInfo.isAdmin ? "-top-20" : "-top-80"}`}
+                  className={`absolute mt-2 mr-14 space-y-2 bg-slate-500 text-white ${!userInfo.isAdmin ? "-top-20" : "-top-80"}`}
                 >
                   {userInfo.isAdmin && (
                     <>
