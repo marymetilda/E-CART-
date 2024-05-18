@@ -65,7 +65,7 @@ const Cart = () => {
                         </Link>
 
                         <div className="t-2 text-slate-400">{item.brand}</div>
-                        <div className="t-2 text-sl font-bold">
+                        <div className="t-2 text-xl font-bold">
                           {" "}
                           $ {item.price}
                         </div>
