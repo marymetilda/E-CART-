@@ -90,14 +90,14 @@ const Order = () => {
   ) : error ? (
     <Message variant="danger">{error.data.message}</Message>
   ) : (
-    <div className="w-full flex flex-col lg:pl-[6vw] lg:flex-row">
-      <div className="w-full lg:w-2/3 pr-4">
+    <div className="w-full flex flex-col lg:pl-[6vw] lg:pr-8 lg:flex-row">
+      <div className="w-full lg:w-2/3 lg:pr-4">
         <div className="border-gray-300 mt-5 pb-4 mb-5">
           {order.orderItems.length === 0 ? (
             <Message>Order is empty</Message>
           ) : (
             <div className="overflow-x-auto">
-              <table className="w-[80%]">
+              <table className="w-full lg:w-[80%]">
                 <thead className="border-b-2">
                   <tr>
                     <th className="p-2">Image</th>
@@ -134,30 +134,31 @@ const Order = () => {
         </div>
       </div>
 
-      <div className="md:w-1/3">
+      <div className="md:w-1/3 px-4 lg:px-0">
         <div className="mt-5 border-gray-300 pb-4 mb-4">
           <h2 className="text-xl font-bold mb-2">Shipping</h2>
           <p className="my-4">
-            <strong className="text-sky-500">Order:</strong>
+            <strong className="text-slate-300">Order:</strong>
             {order._id}
           </p>
 
           <p className="mb-4">
-            <strong className="text-sky-500">Name:</strong>{" "}
+            <strong className="text-slate-300">Name:</strong>{" "}
             {order.user.username}
           </p>
 
           <p className="mb-4">
-            <strong className="text-sky-500">Email:</strong> {order.user.email}
+            <strong className="text-slate-300">Email:</strong>{" "}
+            {order.user.email}
           </p>
           <p className="mb-4">
-            <strong className="text-sky-500">Address:</strong>{" "}
+            <strong className="text-slate-300">Address:</strong>{" "}
             {order.shippingAddress.address}, {order.shippingAddress.city},{" "}
             {order.shippingAddress.postalCode}, {order.shippingAddress.country}
           </p>
 
           <p className="mb-4">
-            <strong className="text-sky-500">Method:</strong>{" "}
+            <strong className="text-slate-300">Method:</strong>{" "}
             {order.paymentMethod}
           </p>
 
@@ -172,19 +173,19 @@ const Order = () => {
 
         <div className="flex justify-between mb-2">
           <span>Items</span>
-          <span>$ {order.itemsPrice}</span>
+          <span>₹ {order.itemsPrice}</span>
         </div>
         <div className="flex justify-between mb-2">
           <span>Shipping</span>
-          <span>$ {order.shippingPrice}</span>
+          <span>₹ {order.shippingPrice}</span>
         </div>
         <div className="flex justify-between mb-2">
           <span>Tax</span>
-          <span>$ {order.taxPrice}</span>
+          <span>₹ {order.taxPrice}</span>
         </div>
         <div className="flex justify-between mb-2">
           <span>Total</span>
-          <span>$ {order.totalPrice}</span>
+          <span>₹ {order.totalPrice}</span>
         </div>
 
         {!order.isPaid && (
@@ -211,7 +212,7 @@ const Order = () => {
             <button
               onClick={deliverHandler}
               type="button"
-              className="bg-sky-500 text-white w-full py-2"
+              className="bg-slate-3text-slate-300 text-white w-full py-2"
             >
               Mark As Delivered
             </button>
