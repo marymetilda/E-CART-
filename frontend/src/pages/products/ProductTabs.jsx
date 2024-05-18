@@ -57,7 +57,7 @@ const ProductTabs = ({
           <div className="mt-4">
             {userInfo ? (
               <form
-                className="bg-sky-950 p-4 rounded-lg"
+                className="bg-slate-700 p-4 rounded-lg"
                 onSubmit={submitHandler}
               >
                 <div className="my-2">
@@ -70,7 +70,7 @@ const ProductTabs = ({
                     required
                     value={rating}
                     onChange={(e) => setRating(e.target.value)}
-                    className="p-2 border rounded-lg w-full xl:w-[40rem] text-black"
+                    className="p-2 border rounded-lg w-full xl:w-[40rem] text-white bg-slate-800"
                   >
                     <option value="">Select</option>
                     <option value="1">Inferior</option>
@@ -92,7 +92,7 @@ const ProductTabs = ({
                     required
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
-                    className="p-2 border rounded-lg w-full xl:w-[40rem] text-white"
+                    className="p-2 border rounded-lg w-full xl:w-[40rem] text-white bg-slate-800"
                   />
                 </div>
 
