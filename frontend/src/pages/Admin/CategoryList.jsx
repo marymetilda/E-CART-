@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import CategoryForm from "../../components/CategoryForm";
 import Modal from "../../components/Model";
 import AdminMenu from "./AdminMenu";
+import { Link } from "react-router-dom";
 
 const CategoryList = () => {
   const { data: categories } = useFetchCategoriesQuery();
@@ -90,48 +91,64 @@ const CategoryList = () => {
   };
 
   return (
-    <div className="lg:pl-[6vw] flex flex-col md:flex-row">
-      <AdminMenu />
-      <div className="md:w-3/4 p-3">
-        <div className="h-12">Manage Categories</div>
-        <CategoryForm
-          value={name}
-          setValue={setName}
-          handleSubmit={handleCreateCategory}
-          buttonText="Submit"
-        />
-        <br />
-        <hr />
-
-        <div className="flex flex-wrap">
-          {categories?.map((category) => (
-            <div key={category._id}>
-              <button
-                className="border border-sky-500 text-sky-500 py-2 px-4 rounded-lg m-3 hover:bg-sky-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
-                onClick={() => {
-                  {
-                    setModalVisible(true);
-                    setSelectedCategory(category);
-                    setUpdatingName(category.name);
-                  }
-                }}
-              >
-                {category.name}
-              </button>
-            </div>
-          ))}
-        </div>
-        <Modal isOpen={modalVisible} onClose={() => setModalVisible(false)}>
-          <CategoryForm
-            value={updatingName}
-            setValue={(value) => setUpdatingName(value)}
-            handleSubmit={handleUpdateCategory}
-            buttonText="Update"
-            handleDelete={handleDeleteCategory}
-          />
-        </Modal>
+    <>
+      <div className="w-full pl-[6vw] lg:py-4">
+        <Link to="/">
+          <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
+            INFINITY
+          </p>
+        </Link>
+        <p className="text-center lg:text-left text-sm">
+          Give you infinite meanings in a limited amount of time!
+        </p>
       </div>
-    </div>
+      <AdminMenu />
+      <div className="lg:pl-[6vw] flex flex-col md:flex-row">
+        <div className="w-full p-3">
+          <div className="text-4xl font-semibold text-center py-8">
+            Manage Categories
+          </div>
+          <div className="flex items-center justify-center">
+            <CategoryForm
+              value={name}
+              setValue={setName}
+              handleSubmit={handleCreateCategory}
+              buttonText="Submit"
+            />
+          </div>
+          <br />
+          <hr />
+
+          <div className="flex items-center justify-center flex-wrap">
+            {categories?.map((category) => (
+              <div key={category._id}>
+                <button
+                  className="border border-slate-300 text-slate-300 py-2 px-4 rounded-lg m-3 hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-500"
+                  onClick={() => {
+                    {
+                      setModalVisible(true);
+                      setSelectedCategory(category);
+                      setUpdatingName(category.name);
+                    }
+                  }}
+                >
+                  {category.name}
+                </button>
+              </div>
+            ))}
+          </div>
+          <Modal isOpen={modalVisible} onClose={() => setModalVisible(false)}>
+            <CategoryForm
+              value={updatingName}
+              setValue={(value) => setUpdatingName(value)}
+              handleSubmit={handleUpdateCategory}
+              buttonText="Update"
+              handleDelete={handleDeleteCategory}
+            />
+          </Modal>
+        </div>
+      </div>
+    </>
   );
 };
 
