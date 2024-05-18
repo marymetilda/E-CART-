@@ -11,6 +11,7 @@ import {
   FaStar,
   FaStore,
 } from "react-icons/fa";
+import { IoRibbonSharp } from "react-icons/io5";
 
 const ProductCarousel = () => {
   const { data: products, isLoading, error } = useGetTopProductsQuery();
@@ -48,17 +49,30 @@ const ProductCarousel = () => {
               quantity,
               countInStock,
             }) => (
-              <div key={_id}>
+              <div
+                key={_id}
+                className="p-4 bg-slate-800 rounded-lg shadow-[inset_0px_0px_20px_3px_#d69e2e] relative"
+              >
                 <img
                   src={image}
                   alt={name}
                   className="w-full h-[30rem] rounded-lg object-cover"
                 />
+                <div className="absolute top-0 left-0 flex bg-yellow-100 py-1 px-4 border-2 border-yellow-400 rounded-sm">
+                  <IoRibbonSharp className="text-yellow-400" size={36} />
+                  <p className="text-xl font-semibold text-yellow-400">
+                    Best Sellers
+                  </p>
+                </div>
 
                 <div className="flex flex-col items-center sm:flex-row justify-between w-full">
                   <div className="flex flex-col items-center sm:items-start pb-2 sm:pb-0 sm:flex-1">
-                    <h2 className="pb-4 sm:pb-0">{name}</h2>
-                    <p className="pb-2 sm:pb-4">${price}</p>
+                    <h2 className="pb-4 sm:pb-0 text-xl text-yellow-400 font-semibold">
+                      {name}
+                    </h2>
+                    <p className="pb-2 sm:pb-4 text-xl text-yellow-300">
+                      ₹{price}
+                    </p>
                     <p className="px-2 text-center sm:text-left sm:px-0">
                       {description.substring(0, 170)}...
                     </p>

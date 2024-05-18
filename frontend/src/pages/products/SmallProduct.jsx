@@ -1,9 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import HeartIcon from "./HeartIcon";
+import { IoRibbonSharp } from "react-icons/io5";
 
 const SmallProduct = ({ product }) => {
+  const location = useLocation();
+
   return (
-    <div className="w-[20rem] lg:ml-[2rem] p-3">
+    <div className="w-[20rem] lg:ml-[2rem] p-3 relative">
+      {location.pathname === "/" && (
+        <div className="absolute top-0 flex bg-yellow-100 p-1 border-2 border-yellow-400 rounded-full z-30">
+          <IoRibbonSharp className="text-yellow-400" size={30} />
+        </div>
+      )}
       <div className="relative">
         <img
           src={product.image}
