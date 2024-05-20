@@ -33,6 +33,6 @@ app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
 app.listen(port, () => console.log(`Server running on prot ${port}`));
 
 // Build Front end and copy the dist and paste it in the backend folder and give the path of index.html in the following command
-app.get("/", (req, res) => {
-  res.send(__dirname + "./dist/index.html");
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
 });
