@@ -34,5 +34,5 @@ app.listen(port, () => console.log(`Server running on prot ${port}`));
 
 // Build Front end and copy the dist and paste it in the backend folder and give the path of index.html in the following command
 app.get("/", (req, res) => {
-  res.send("./dist/index.html");
+  res.send(__dirname + "./dist/index.html");
 });
