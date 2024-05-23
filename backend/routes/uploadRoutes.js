@@ -39,7 +39,7 @@ router.post("/", (req, res) => {
     } else if (req.file) {
       res.status(200).send({
         messsage: "Image uploaded successfully",
-        image: `${req.file.path}`,
+        image: `/${req.file.path}`,
       });
     } else {
       res.status(400).send({

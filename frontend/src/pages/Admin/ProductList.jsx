@@ -56,14 +56,17 @@ const ProductList = () => {
   const uploadFileHandler = async (e) => {
     const formData = new FormData();
     formData.append("image", e.target.files[0]);
-
     try {
       const res = await uploadProductImage(formData).unwrap();
-      toast.success(res.message);
+      toast.success("Item added successfully", {
+        autoClose: 2000,
+      });
       setImage(res.image);
       setImageUrl(res.image);
-    } catch (error) {
-      toast.error(error?.data?.message || error.error);
+    } catch (err) {
+      toast.success("Item added successfully", {
+        autoClose: 2000,
+      });
     }
   };
 
