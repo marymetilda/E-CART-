@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   useCreateProductMutation,
   useUploadProductImageMutation,
@@ -7,6 +7,7 @@ import {
 import { useFetchCategoriesQuery } from "../../redux/api/catetgoryApiSlice";
 import { toast } from "react-toastify";
 import AdminMenu from "./AdminMenu";
+import LogoContainer from "../../components/LogoContainer";
 
 const ProductList = () => {
   const [image, setImage] = useState("");
@@ -72,16 +73,7 @@ const ProductList = () => {
 
   return (
     <div className="lg:pl-[5vw]">
-      <div className="w-full lg:py-4 pb-4">
-        <Link to="/">
-          <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
-            INFINITY
-          </p>
-        </Link>
-        <p className="text-center lg:text-left text-sm">
-          Give you infinite meanings in a limited amount of time!
-        </p>
-      </div>
+      <LogoContainer className="w-full lg:py-4 pb-4" />
       <AdminMenu />
       <div className="md:w-full p-3">
         <div className="text-4xl font-semibold mb-6 text-center">

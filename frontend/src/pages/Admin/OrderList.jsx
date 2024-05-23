@@ -3,6 +3,7 @@ import Loader from "../../components/Loader";
 import { Link, useLocation } from "react-router-dom";
 import { useGetOrdersQuery } from "../../redux/api/orderApiSlice";
 import AdminMenu from "./AdminMenu";
+import LogoContainer from "../../components/LogoContainer";
 
 const OrderList = () => {
   const { data: orders, isLoading, error } = useGetOrdersQuery();
@@ -11,16 +12,7 @@ const OrderList = () => {
   return (
     <>
       {location.pathname !== "/admin/dashboard" && (
-        <div className="w-full pl-[6vw] lg:py-4">
-          <Link to="/">
-            <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
-              INFINITY
-            </p>
-          </Link>
-          <p className="text-center lg:text-left text-sm">
-            Give you infinite meanings in a limited amount of time!
-          </p>
-        </div>
+        <LogoContainer className="w-full pl-[6vw] lg:py-4" />
       )}
       <div className="mt-[2rem] lg:mt-0 ml-[2rem] text-4xl font-bold pb-12 text-center">
         All Orders

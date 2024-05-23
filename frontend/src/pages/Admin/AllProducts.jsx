@@ -3,6 +3,7 @@ import moment from "moment";
 import { useAllProductsQuery } from "../../redux/api/productApiSlice";
 import AdminMenu from "./AdminMenu";
 import Loader from "../../components/Loader";
+import LogoContainer from "../../components/LogoContainer";
 
 const AllProducts = () => {
   const { data: products, isLoading, isError } = useAllProductsQuery();
@@ -17,16 +18,7 @@ const AllProducts = () => {
 
   return (
     <div className="lg:pl-[6vw]">
-      <div className="w-full lg:py-4">
-        <Link to="/">
-          <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
-            INFINITY
-          </p>
-        </Link>
-        <p className="text-center lg:text-left text-sm">
-          Give you infinite meanings in a limited amount of time!
-        </p>
-      </div>
+      <LogoContainer className="w-full lg:py-4" />
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-col items-center">
           <div className="ml-[2rem] text-4xl font-bold pb-12">

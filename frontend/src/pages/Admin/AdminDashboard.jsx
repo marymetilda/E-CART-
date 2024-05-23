@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import AdminMenu from "./AdminMenu";
 import OrderList from "./OrderList";
 import Loader from "../../components/Loader";
-import { Link } from "react-router-dom";
+import LogoContainer from "../../components/LogoContainer";
 
 const AdminDashboard = () => {
   const { data: sales, isLoading } = useGetTotalSalesQuery();
@@ -114,16 +114,7 @@ const AdminDashboard = () => {
 
   return (
     <>
-      <div className="w-full lg:py-4 lg:pl-[5vw]">
-        <Link to="/">
-          <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
-            INFINITY
-          </p>
-        </Link>
-        <p className="text-center lg:text-left text-sm">
-          Give you infinite meanings in a limited amount of time!
-        </p>
-      </div>
+      <LogoContainer className="w-full lg:py-4 lg:pl-[5vw]" />
       <AdminMenu />
       <section className="xl:ml-[4rem] md:ml-0 overflow-x-hidden">
         <div className="w-full lg:pl-[6vw] flex justify-around flex-wrap">
