@@ -10,6 +10,7 @@ import {
 } from "../redux/features/shop/shopSlice";
 import Loader from "../components/Loader";
 import ProductCart from "./products/ProductCart";
+import LogoContainer from "../components/LogoContainer";
 
 const Shop = () => {
   const dispatch = useDispatch();
@@ -83,14 +84,7 @@ const Shop = () => {
 
   return (
     <>
-      <div className="w-full pl-[6vw] lg:pt-4">
-        <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
-          INFINITY
-        </p>
-        <p className="text-center lg:text-left text-sm">
-          Give you infinite meanings in a limited amount of time!
-        </p>
-      </div>
+      <LogoContainer className="w-full pl-[6vw] lg:pt-4" />
       <div className="container mx-auto lg:pl-[6vw] pt-12">
         <div className="flex flex-col items-center justify-center lg:flex-row lg:items-start lg:justify-between">
           <div className="hidden rounded-lg lg:block bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-500 to-slate-900 p-3 mt-2 mb-2 h-fit min-h-[90vh]">

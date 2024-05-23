@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import CategoryForm from "../../components/CategoryForm";
 import Modal from "../../components/Model";
 import AdminMenu from "./AdminMenu";
-import { Link } from "react-router-dom";
+import LogoContainer from "../../components/LogoContainer";
 
 const CategoryList = () => {
   const { data: categories } = useFetchCategoriesQuery();
@@ -92,16 +92,7 @@ const CategoryList = () => {
 
   return (
     <>
-      <div className="w-full pl-[6vw] lg:py-4">
-        <Link to="/">
-          <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
-            INFINITY
-          </p>
-        </Link>
-        <p className="text-center lg:text-left text-sm">
-          Give you infinite meanings in a limited amount of time!
-        </p>
-      </div>
+      <LogoContainer className="w-full pl-[6vw] lg:py-4" />
       <AdminMenu />
       <div className="lg:pl-[6vw] flex flex-col md:flex-row">
         <div className="w-full p-3">

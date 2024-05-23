@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   saveShippingAddress,
   savePaymentMethod,
 } from "../../redux/features/cart/cartSlice";
 import ProgressSteps from "../../components/ProgressSteps";
+import LogoContainer from "../../components/LogoContainer";
 
 const Shipping = () => {
   const cart = useSelector((state) => state.cart);
@@ -39,16 +40,7 @@ const Shipping = () => {
 
   return (
     <div className="w-full">
-      <div className="w-full pl-[6vw] lg:py-4">
-        <Link to="/">
-          <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
-            INFINITY
-          </p>
-        </Link>
-        <p className="text-center lg:text-left text-sm">
-          Give you infinite meanings in a limited amount of time!
-        </p>
-      </div>
+      <LogoContainer className="w-full pl-[6vw] lg:py-4" />
       <div className="container mx-auto mt-10">
         <div className="w-full flex items-center justify-center">
           <h1 className="text-4xl font-semibold lg:mb-4 lg:pl-[5vw] pb-[3rem]">
