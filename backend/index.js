@@ -14,6 +14,8 @@ import connectDB from "./config/db.js";
 
 dotenv.config();
 const port = process.env.PORT || 5000;
+const __dirname = path.resolve();
+console.log(__dirname);
 
 connectDB();
 
@@ -22,6 +24,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "/backend/dist")));
 
 app.use("/api/users", userRoutes);
 app.use("/api/category", categoryRoutes);
@@ -33,12 +36,10 @@ app.use("/api/config/paypal", (req, res) => {
   res.send({ clientId: process.env.PAYPAL_CLIENT_ID });
 });
 
-const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
 
 app.listen(port, () => console.log(`Server running on prot ${port}`));
 
-// Build Front end and copy the dist and paste it in the backend folder and give the path of index.html in the following command
-// app.length("/", (req, res) => {
-//   res.send("/pathto/index.html");
-// });
+app.get("/", (req, res) => {
+  res.sendFile("index.html");
+});
