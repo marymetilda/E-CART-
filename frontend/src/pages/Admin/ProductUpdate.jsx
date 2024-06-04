@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   useUpdateProductMutation,
   useDeleteProductMutation,
@@ -107,7 +107,17 @@ const ProductUpdate = () => {
   };
 
   return (
-    <div className="lg:pl-[6vw]">
+    <div className="lg:pl-[5vw]">
+      <div className="w-full lg:py-4 pb-4">
+        <Link to="/">
+          <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
+            INFINITY
+          </p>
+        </Link>
+        <p className="text-center lg:text-left text-sm">
+          Give you infinite meanings in a limited amount of time!
+        </p>
+      </div>
       <AdminMenu />
       <div className="md:w-full p-3">
         <div className="text-2xl font-semibold mb-6 text-center">
@@ -144,7 +154,7 @@ const ProductUpdate = () => {
               <label htmlFor="name">Name</label>
               <input
                 type="text"
-                className="p-4 mb-3 w-full border rounded-lg bg-[#101011] text-white"
+                className="p-4 mb-3 w-full border rounded-lg text-white bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-600 to-slate-500"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -154,7 +164,7 @@ const ProductUpdate = () => {
               <label htmlFor="name block">Price</label>
               <input
                 type="number"
-                className="p-4 mb-3 w-full border rounded-lg bg-[#101011] text-white"
+                className="p-4 mb-3 w-full border rounded-lg text-white bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-600 to-slate-500"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               />
@@ -166,7 +176,7 @@ const ProductUpdate = () => {
               <label htmlFor="name block">Quantity</label>
               <input
                 type="number"
-                className="p-4 mb-3 w-full border rounded-lg bg-[#101011] text-white"
+                className="p-4 mb-3 w-full border rounded-lg text-white bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-600 to-slate-500"
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
               />
@@ -176,7 +186,7 @@ const ProductUpdate = () => {
               <label htmlFor="name block">Brand</label>
               <input
                 type="text"
-                className="p-4 mb-3 w-full border rounded-lg bg-[#101011] text-white"
+                className="p-4 mb-3 w-full border rounded-lg text-white bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-600 to-slate-500"
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
               />
@@ -188,7 +198,7 @@ const ProductUpdate = () => {
           </label>
           <textarea
             type="text"
-            className="p-2 mb-3 bg-[#101011] border rounded-lg w-full text-white"
+            className="p-2 mb-3 border rounded-lg w-full text-white bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-600 to-slate-500"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
@@ -198,7 +208,7 @@ const ProductUpdate = () => {
               <label htmlFor="name block">Count In Stock</label> <br />
               <input
                 type="text"
-                className="p-4 mb-3 w-full border rounded-lg bg-[#101011] text-white"
+                className="p-4 mb-3 w-full border rounded-lg text-white bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-600 to-slate-500"
                 value={stock}
                 onChange={(e) => setStock(e.target.value)}
               />
@@ -209,7 +219,7 @@ const ProductUpdate = () => {
               <br />
               <select
                 placeholder="Choose Category"
-                className="p-4 mb-3 w-full border rounded-lg bg-[#101011] text-white"
+                className="p-4 mb-3 w-full border rounded-lg bg-slate-800 text-white"
                 onChange={(e) => setCategory(e.target.value)}
               >
                 {categories?.map((cat) => (
@@ -224,13 +234,13 @@ const ProductUpdate = () => {
           <div>
             <button
               onClick={handleSubmit}
-              className="py-4 px-10 mt-5 rounded-lg text-lg font-bold bg-green-600 mr-6"
+              className="py-4 px-10 mt-5 rounded-lg text-lg text-green-400 font-bold border-4 border-green-600 mr-6 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-500 via-slate-600 to-slate-900"
             >
               Update
             </button>
             <button
               onClick={handleDelete}
-              className="py-4 px-10 mt-5 rounded-lg text-lg font-bold bg-sky-600"
+              className="py-4 px-10 mt-5 rounded-lg text-lg font-bold text-red-400 border-4 border-red-400 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-500 via-slate-600 to-slate-900"
             >
               Delete
             </button>

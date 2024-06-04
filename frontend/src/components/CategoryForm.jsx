@@ -6,25 +6,25 @@ const CategoryForm = ({
   buttonText,
 }) => {
   return (
-    <div className="p-3">
+    <div className="p-3 w-full md:w-[70vw] lg:w-[30vw]">
       <form onSubmit={handleSubmit} className="space-y-3">
         <input
           type="text"
-          className="py-3 px-4 border rounded-lg w-full bg-black"
+          className="text-white placeholder:text-slate-300 py-3 px-4 border rounded-lg w-full bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 to-slate-500"
           placeholder="Write category name"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
 
         <div className="flex justify-between">
-          <button className="bg-sky-500 text-white py-2 px-4 rounded-lg hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">
+          <button className="bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-500 to-slate-900 text-slate-300 px-4 py-2 rounded cursor-pointer my-[1rem]">
             {buttonText}
           </button>
 
           {handleDelete && (
             <button
               onClick={handleDelete}
-              className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+              className="bg-red-400 text-white py-2 px-8 rounded-lg hover:bg-red-600 h-fit"
             >
               Delete
             </button>
