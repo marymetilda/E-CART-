@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <>
-      <LogoContainer className="w-full pl-[6vw] lg:py-4" />
+  <LogoContainer className="w-full pl-[6vw] lg:py-4" />
       <Marquee />
       {userInfo ? (
         <div className="text-center">
