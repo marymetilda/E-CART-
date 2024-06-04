@@ -160,11 +160,6 @@ const Register = () => {
           <p className="text-center pt-8">
             Register for exploring the world of INFINITY
           </p>
-          {/* <img
-          src="https://plus.unsplash.com/premium_photo-1671751035347-e308f0a19b28?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-          className="w-full rounded-lg"
-        /> */}
         </div>
       </div>
     </section>

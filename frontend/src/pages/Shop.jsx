@@ -83,96 +83,18 @@ const Shop = () => {
 
   return (
     <>
-      <div className="container mx-auto lg:pl-[6vw]">
+      <div className="w-full pl-[6vw] lg:pt-4">
+        <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
+          INFINITY
+        </p>
+        <p className="text-center lg:text-left text-sm">
+          Give you infinite meanings in a limited amount of time!
+        </p>
+      </div>
+      <div className="container mx-auto lg:pl-[6vw] pt-12">
         <div className="flex flex-col items-center justify-center lg:flex-row lg:items-start lg:justify-between">
-          <button
-            type="button"
-            onClick={() => setIsFiltersOpen(!isFiltersOpen)}
-            className="lg:hidden text-center py-2 bg-gray-700 rounded-lg w-full mb-2"
-          >
-            Filter
-          </button>
-          {isFiltersOpen && (
-            <div className="bg-[#151515] p-3 mt-2 mb-2 h-fit w-full lg:hidden">
-              <h2 className="text-center py-2 bg-sky-800 rounded-full mb-2">
-                Filter By Categories
-              </h2>
-
-              <div className="p-5 w-[15rem]">
-                {categories?.map((c) => (
-                  <div key={c._id} className="mb-2">
-                    <div className="flex items-center mr-4">
-                      <input
-                        type="checkbox"
-                        id="red-checkbox"
-                        onChange={(e) => handleCheck(e.target.checked, c._id)}
-                        className="w-4 h-4 text-sky-600 bg-gray-100 border-gray-100 rounded focus:ring-sky-500 dark:focus:ring-sky-600 dark:ring-offset-gray-50 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-
-                      <label
-                        htmlFor="sky-checkbox"
-                        className="ml-2 text-sm font-medium text-white dark:text-gray-300"
-                      >
-                        {c.name}
-                      </label>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <h2 className="h4 text-center py-2 bg-sky-800 rounded-full mb-2">
-                Filter By Brands
-              </h2>
-
-              <div className="p-5">
-                {uniqueBrands?.map((brand) => (
-                  <>
-                    <div className="flex items-center mr-4 mb-5">
-                      <input
-                        type="radio"
-                        id={brand}
-                        name="brand"
-                        onChange={() => handleBrandClick(brand)}
-                        className="w-4 h-4 text-sky-400 bg-gray-100 border-gray-300 focus:ring-sky-500 dark:focus:ring-sky-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-
-                      <label
-                        htmlFor="sky-radio"
-                        className="ml-2 text-sm font-medium text-white dark:text-gray-300"
-                      >
-                        {brand}
-                      </label>
-                    </div>
-                  </>
-                ))}
-              </div>
-
-              <h2 className="h4 text-center py-2 bg-sky-800 rounded-full mb-2">
-                Filter By Price
-              </h2>
-
-              <div className="p-5 w-full">
-                <input
-                  type="text"
-                  placeholder="Enter Price"
-                  value={priceFilter}
-                  onChange={handlePriceChange}
-                  className="w-full px-3 py-2 placeholder:text-gray-400 border rounded-lg outline-none focus:outline-none focus:ring focus:border-sky-300 bg-gray-700"
-                />
-              </div>
-
-              <div className="p-5 pt-0">
-                <button
-                  className="w-full border my-4"
-                  onClick={() => window.location.reload()}
-                >
-                  Reset
-                </button>
-              </div>
-            </div>
-          )}
-          <div className="hidden lg:block bg-[#151515] p-3 mt-2 mb-2 h-fit min-h-[90vh]">
-            <h2 className="text-center py-2 bg-sky-800 rounded-full mb-2">
+          <div className="hidden rounded-lg lg:block bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-500 to-slate-900 p-3 mt-2 mb-2 h-fit min-h-[90vh]">
+            <h2 className="text-center py-2 bg-gradient-to-r from-slate-600 via-slate-900 to-slate-600 rounded-full mb-2">
               Filter By Categories
             </h2>
 
@@ -184,11 +106,11 @@ const Shop = () => {
                       type="checkbox"
                       id="red-checkbox"
                       onChange={(e) => handleCheck(e.target.checked, c._id)}
-                      className="w-4 h-4 text-sky-600 bg-gray-100 border-gray-100 rounded focus:ring-sky-500 dark:focus:ring-sky-600 dark:ring-offset-gray-50 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      className="w-4 h-4 text-slate-600 bg-gray-100 border-gray-100 rounded focus:ring-slate-500 dark:focus:ring-slate-600 dark:ring-offset-gray-50 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     />
 
                     <label
-                      htmlFor="sky-checkbox"
+                      htmlFor="slate-checkbox"
                       className="ml-2 text-sm font-medium text-white dark:text-gray-300"
                     >
                       {c.name}
@@ -198,7 +120,7 @@ const Shop = () => {
               ))}
             </div>
 
-            <h2 className="h4 text-center py-2 bg-sky-800 rounded-full mb-2">
+            <h2 className="h4 text-center py-2 bg-gradient-to-r from-slate-600 via-slate-900 to-slate-600 rounded-full mb-2">
               Filter By Brands
             </h2>
 
@@ -211,11 +133,11 @@ const Shop = () => {
                       id={brand}
                       name="brand"
                       onChange={() => handleBrandClick(brand)}
-                      className="w-4 h-4 text-sky-400 bg-gray-100 border-gray-300 focus:ring-sky-500 dark:focus:ring-sky-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      className="w-4 h-4 text-slate-400 bg-gray-100 border-gray-300 focus:ring-slate-500 dark:focus:ring-slate-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     />
 
                     <label
-                      htmlFor="sky-radio"
+                      htmlFor="slate-radio"
                       className="ml-2 text-sm font-medium text-white dark:text-gray-300"
                     >
                       {brand}
@@ -225,7 +147,7 @@ const Shop = () => {
               ))}
             </div>
 
-            <h2 className="h4 text-center py-2 bg-sky-800 rounded-full mb-2">
+            <h2 className="h4 text-center py-2 bg-gradient-to-r from-slate-600 via-slate-900 to-slate-600 rounded-full mb-2">
               Filter By Price
             </h2>
 
@@ -235,13 +157,13 @@ const Shop = () => {
                 placeholder="Enter Price"
                 value={priceFilter}
                 onChange={handlePriceChange}
-                className="w-full px-3 py-2 placeholder:text-gray-400 border rounded-lg outline-none focus:outline-none focus:ring focus:border-sky-300 bg-gray-700"
+                className="w-full px-3 py-2 placeholder:text-gray-400 border rounded-lg outline-none focus:outline-none focus:ring focus:border-slate-300 bg-gray-700"
               />
             </div>
 
             <div className="p-5 pt-0">
               <button
-                className="w-full border my-4"
+                className="w-full border border-slate-400 my-4 rounded-lg bg-gradient-to-r from-slate-600 via-slate-900 to-slate-600"
                 onClick={() => window.location.reload()}
               >
                 Reset
@@ -250,10 +172,99 @@ const Shop = () => {
           </div>
 
           <div className="p-3 w-full lg:w-fit">
-            <h2 className="text-2xl lg:text-3xl font-semibold text-center mb-2">
+            <p className="text-[32px] lg:text-[40px] font-bold tracking-wider text-center lg:pb-8 lg:-mt-16">
+              Shop... Smile... Repeat...
+            </p>
+            <h2 className="text-xl lg:text-3xl font-semibold text-center my-4 lg:my-2">
               {products?.length} products
             </h2>
-            <div className="flex flex-col lg:flex-row flex-wrap">
+            <button
+              type="button"
+              onClick={() => setIsFiltersOpen(!isFiltersOpen)}
+              className="lg:hidden text-center py-2 bg-gray-700 rounded-lg w-full mb-2"
+            >
+              Filter
+            </button>
+            {isFiltersOpen && (
+              <div className="bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-500 to-slate-900 rounded-lg p-3 mt-2 mb-2 h-fit w-full lg:hidden">
+                <h2 className="text-center py-2 bg-gradient-to-r from-slate-600 via-slate-900 to-slate-600 rounded-full mb-2">
+                  Filter By Categories
+                </h2>
+
+                <div className="p-5 w-[15rem]">
+                  {categories?.map((c) => (
+                    <div key={c._id} className="mb-2">
+                      <div className="flex items-center mr-4">
+                        <input
+                          type="checkbox"
+                          id="red-checkbox"
+                          onChange={(e) => handleCheck(e.target.checked, c._id)}
+                          className="w-4 h-4 text-slate-500 bg-gray-100 border-gray-100 rounded focus:ring-slate-500 dark:focus:ring-slate-600 dark:ring-offset-gray-50 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
+
+                        <label
+                          htmlFor="slate-checkbox"
+                          className="ml-2 text-sm font-medium text-white dark:text-gray-300"
+                        >
+                          {c.name}
+                        </label>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <h2 className="h4 text-center py-2 bg-gradient-to-r from-slate-600 via-slate-900 to-slate-600 rounded-full mb-2">
+                  Filter By Brands
+                </h2>
+
+                <div className="p-5">
+                  {uniqueBrands?.map((brand) => (
+                    <>
+                      <div className="flex items-center mr-4 mb-5">
+                        <input
+                          type="radio"
+                          id={brand}
+                          name="brand"
+                          onChange={() => handleBrandClick(brand)}
+                          className="w-4 h-4 text-slate-400 bg-gray-100 border-gray-300 focus:ring-slate-500 dark:focus:ring-slate-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
+
+                        <label
+                          htmlFor="slate-radio"
+                          className="ml-2 text-sm font-medium text-slate-300 dark:text-gray-300"
+                        >
+                          {brand}
+                        </label>
+                      </div>
+                    </>
+                  ))}
+                </div>
+
+                <h2 className="h4 text-center py-2 bg-gradient-to-r from-slate-600 via-slate-900 to-slate-600 rounded-full mb-2">
+                  Filter By Price
+                </h2>
+
+                <div className="p-5 w-full">
+                  <input
+                    type="text"
+                    placeholder="Enter Price"
+                    value={priceFilter}
+                    onChange={handlePriceChange}
+                    className="w-full px-3 py-2 placeholder:text-gray-400 border rounded-lg outline-none focus:outline-none focus:ring focus:border-slate-300 bg-gray-700"
+                  />
+                </div>
+
+                <div className="p-5 pt-0">
+                  <button
+                    className="w-full border my-4 bg-gradient-to-r from-slate-600 via-slate-900 to-slate-600 rounded-lg"
+                    onClick={() => window.location.reload()}
+                  >
+                    Reset
+                  </button>
+                </div>
+              </div>
+            )}
+            <div className="flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3 gap-x-2 pt-4 lg:pt-0">
               {products.length === 0 ? (
                 <Loader />
               ) : (

@@ -14,17 +14,16 @@ const ProductCart = ({ product }) => {
   };
 
   return (
-    <div className="w-full lg:max-w-sm relative bg-[#1a1a1a] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full lg:min-w-56 lg:max-w-sm h-96 overflow-auto relative bg-slate-800 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <section className="relative">
-        <span className="absolute bottom-3 right-3 bg-sky-100 text-sky-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-sky-900 dark:text-sky-300">
+        <span className="absolute bottom-3 right-3 bg-slate-100 text-slate-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-slate-900 dark:text-slate-300">
           {product.brand}
         </span>
         <Link to={`/product/${product._id}`}>
           <img
-            className="cursor-pointer w-full"
+            className="cursor-pointer w-full h-[170px] object-cover"
             src={product.image}
             alt={product.name}
-            style={{ height: "170px", objectFit: "cover" }}
           />
         </Link>
         <HeartIcon product={product} />
@@ -32,10 +31,10 @@ const ProductCart = ({ product }) => {
 
       <div className="p-5">
         <div className="flex justify-between">
-          <h5 className="mb-2 text-xl text-white dark:text-white">
+          <h5 className="mb-2 text-xl text-slate-300 dark:text-slate-300">
             {product.name}
           </h5>
-          <p className="font-semibold text-sky-500">
+          <p className="font-semibold text-slate-500">
             {product?.price?.toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
@@ -50,7 +49,7 @@ const ProductCart = ({ product }) => {
         <section className="flex justify-between items-center">
           <Link
             to={`/product/${product._id}`}
-            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800"
+            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-slate-300 rounded-lg hover:bg-slate-800 focus:outline-none bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-500 to-slate-900"
           >
             Read More
             <svg

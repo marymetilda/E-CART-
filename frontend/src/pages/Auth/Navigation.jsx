@@ -118,7 +118,7 @@ const Navigation = () => {
             <div className="absolute top-9">
               {cartItems.length > 0 && (
                 <span>
-                  <div className="px-1 py-0 text-sm text-white bg-sky-500 rounded-full">
+                  <div className="px-1.5 py-0 text-sm text-white bg-rose-400 rounded-full">
                     {cartItems.reduce((a, c) => a + parseInt(c.qty), 0)}
                   </div>
                 </span>
@@ -231,7 +231,7 @@ const Navigation = () => {
       </div>
 
       <div
-        className={`flex h-full flex-col px-8 pb-8 lg:hidden ${isModalOpen && "min-h-screen"}`}
+        className={`flex h-full flex-col px-8 lg:hidden ${isModalOpen && "min-h-screen"}`}
       >
         <div className="sticky top-0 z-30 flex w-full items-center justify-between py-5">
           <button onClick={handleModalState}>

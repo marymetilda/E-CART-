@@ -29,7 +29,7 @@ const ProgressSteps = ({ step1, step2, step3 }) => {
         )}
 
         <div
-          className={`${step3 ? "text-green-500 flex items-center justify-center gap-4 lg:gap-0 lg:flex-col" : "text-gray-300"}`}
+          className={`${step3 ? "text-green-500 flex items-center justify-center gap-4 lg:gap-0 lg:flex-col" : "md:pl-[10rem] text-gray-300"}`}
         >
           <span>Summary</span>
           {step1 && step2 && step3 ? (
