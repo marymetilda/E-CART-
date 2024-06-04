@@ -46,14 +46,14 @@ const Profile = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 mt-[10rem]">
+    <div className="container mx-auto p-4">
       <div className="flex flex-col justify-center items-center md:flex">
-        <div className="w-1/3">
+        <div className="w-full lg:w-1/3">
           <h2 className="text-2xl font-semibold mb-4 text-white">
             Update Profile
           </h2>
         </div>
-        <div className="md:w-1/3">
+        <div className="w-full lg:w-1/2">
           <form onSubmit={submitHandler}>
             <div className="mb-4">
               <label className="block text-white mb-2">Name</label>
