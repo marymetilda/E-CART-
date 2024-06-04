@@ -81,25 +81,25 @@ const ProductDetails = () => {
         </Message>
       ) : (
         <>
-          <div className="flex flex-wrap relative justify-between mt-[2rem] ml-[10rem]">
-            <div>
+          <div className="relative w-full flex flex-col lg:flex-row  flex-wrap items-center justify-between lg:mt-[2rem]">
+            <div className="w-full flex items-center justify-center">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full xl:w-[40rem] lg:w-[40rem] md:w-[30rem] sm:w-[20rem] mr-[2rem]"
+                className="w-full xl:w-[40rem] lg:w-[40rem] md:w-[30rem] sm:w-[20rem]"
               />
               <HeartIcon product={product} />
             </div>
 
-            <div className="flex flex-col justify-between">
+            <div className="w-full flex flex-col justify-between md:pl-[8vw]">
               <h2 className="text-2xl font-semibold">{product.name}</h2>
               <p className="my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
                 {product.description}
               </p>
 
-              <p className="text-5xl font-extrabold">$ {product.price}</p>
+              <p className="text-5xl font-extrabold pb-2">$ {product.price}</p>
 
-              <div className="flex items-center justify-between w-[20rem]">
+              <div className="flex items-center justify-between w-full lg:w-[20rem]">
                 <div className="one">
                   <h1 className="flex items-center mb-6">
                     <FaStore className="mr-2 text-white" /> Brand:{" "}
@@ -131,7 +131,7 @@ const ProductDetails = () => {
                 </div>
               </div>
 
-              <div className="flex jsutify-between flex-wrap">
+              <div className="flex justify-between flex-wrap">
                 <Ratings
                   value={product.rating}
                   text={`${product.numReviews} reviews`}
@@ -167,7 +167,7 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            <div className="mt-[5rem] container flex flex-wrap items-start justify-between ml-[10rem]">
+            <div className="mt-[5rem] w-full container flex flex-wrap items-center md:items-start justify-between lg:ml-[10rem]">
               <ProductTabs
                 loadingProductReview={loadingProductReview}
                 userInfo={userInfo}

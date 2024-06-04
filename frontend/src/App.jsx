@@ -5,10 +5,13 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <div className="bg-black min-h-screen">
+    <div
+      id="wrapper"
+      className="bg-black min-h-screen max-h-screen overflow-auto"
+    >
       <ToastContainer />
       <Navigation />
-      <main className="py-3">
+      <main className="py-3 px-6">
         <Outlet />
       </main>
     </div>
