@@ -25,7 +25,7 @@ const Home = () => {
 
             <Link
               to="/shop"
-              className="bg-pink-600 font-bold rounded-full py-2 px-10"
+              className="bg-sky-600 font-bold rounded-full py-2 px-10"
             >
               Shop
             </Link>

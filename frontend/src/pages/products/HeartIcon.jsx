@@ -40,7 +40,7 @@ const HeartIcon = ({ product }) => {
       className="absolute top-2 right-5 cursor-pointer"
     >
       {isFavorites ? (
-        <FaHeart className="text-pink-500" />
+        <FaHeart className="text-sky-500" />
       ) : (
         <FaRegHeart className="text-white" />
       )}

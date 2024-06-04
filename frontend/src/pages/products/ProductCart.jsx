@@ -16,7 +16,7 @@ const ProductCart = ({ product }) => {
   return (
     <div className="w-full lg:max-w-sm relative bg-[#1a1a1a] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <section className="relative">
-        <span className="absolute bottom-3 right-3 bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
+        <span className="absolute bottom-3 right-3 bg-sky-100 text-sky-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-sky-900 dark:text-sky-300">
           {product.brand}
         </span>
         <Link to={`/product/${product._id}`}>
@@ -35,7 +35,7 @@ const ProductCart = ({ product }) => {
           <h5 className="mb-2 text-xl text-white dark:text-white">
             {product.name}
           </h5>
-          <p className="font-semibold text-pink-500">
+          <p className="font-semibold text-sky-500">
             {product?.price?.toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
@@ -50,7 +50,7 @@ const ProductCart = ({ product }) => {
         <section className="flex justify-between items-center">
           <Link
             to={`/product/${product._id}`}
-            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-pink-700 rounded-lg hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800"
           >
             Read More
             <svg

@@ -14,6 +14,7 @@ import "./Navigation.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/api/usersApiSlice";
 import { logout } from "../../redux/features/auth/authSlice";
+import { clearCartItems } from "../../redux/features/cart/cartSlice";
 import FavoritesCount from "../products/FavoritesCount";
 
 const dropdownItems = [
@@ -62,6 +63,7 @@ const Navigation = () => {
     try {
       await logoutApiCall().unwrap();
       dispatch(logout());
+      dispatch(clearCartItems());
       navigate("/login");
     } catch (error) {
       console.log(error);
@@ -89,7 +91,7 @@ const Navigation = () => {
     <>
       <div
         style={{ zIndex: 999 }}
-        className={`hidden lg:flex flex-col justify-between p-4 text-white bg-black w-[4%] hover:w-[15%] h-[100vh] absolute`}
+        className={`hidden lg:flex flex-col justify-between p-4 text-white bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-500 to-slate-900 w-[4%] hover:w-[15%] h-[100vh] absolute`}
         id="navigation-container"
       >
         <div className="flex flex-col justify-center space-y-4">
@@ -116,7 +118,7 @@ const Navigation = () => {
             <div className="absolute top-9">
               {cartItems.length > 0 && (
                 <span>
-                  <div className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
+                  <div className="px-1 py-0 text-sm text-white bg-sky-500 rounded-full">
                     {cartItems.reduce((a, c) => a + parseInt(c.qty), 0)}
                   </div>
                 </span>
@@ -229,7 +231,7 @@ const Navigation = () => {
       </div>
 
       <div
-        className={`flex h-full flex-col px-8 pb-8 ${isModalOpen && "min-h-screen"}`}
+        className={`flex h-full flex-col px-8 pb-8 lg:hidden ${isModalOpen && "min-h-screen"}`}
       >
         <div className="sticky top-0 z-30 flex w-full items-center justify-between py-5">
           <button onClick={handleModalState}>
@@ -246,7 +248,7 @@ const Navigation = () => {
           )}
         </div>
         {isModalOpen && (
-          <div className="w-full h-full bg-pink-900 flex-1 flex flex-col items-center justify-between pb-12">
+          <div className="w-full h-full bg-sky-900 flex-1 flex flex-col items-center justify-between pb-12">
             <div className="flex flex-col items-center justify-center space-y-4">
               <Link
                 onClick={() => {
@@ -283,7 +285,7 @@ const Navigation = () => {
                 <div className="absolute top-9">
                   {cartItems.length > 0 && (
                     <span>
-                      <div className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
+                      <div className="px-1 py-0 text-sm text-white bg-sky-500 rounded-full">
                         {cartItems.reduce((a, c) => a + parseInt(c.qty), 0)}
                       </div>
                     </span>

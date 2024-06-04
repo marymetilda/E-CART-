@@ -57,7 +57,7 @@ const ProductTabs = ({
           <div className="mt-4">
             {userInfo ? (
               <form
-                className="bg-pink-950 p-4 rounded-lg"
+                className="bg-sky-950 p-4 rounded-lg"
                 onSubmit={submitHandler}
               >
                 <div className="my-2">
@@ -99,7 +99,7 @@ const ProductTabs = ({
                 <button
                   type="submit"
                   disabled={loadingProductReview}
-                  className="bg-pink-600 text-white py-2 px-4 rounded-lg w-full lg:w-fit"
+                  className="bg-sky-600 text-white py-2 px-4 rounded-lg w-full lg:w-fit"
                 >
                   Submit
                 </button>
@@ -115,7 +115,7 @@ const ProductTabs = ({
 
       <section>
         {activeTab === 2 && (
-          <div className="bg-pink-950 p-4 rounded-lg">
+          <div className="bg-sky-950 p-4 rounded-lg">
             <div>{product.reviews.length === 0 && <p>No Reviews</p>}</div>
 
             <div>

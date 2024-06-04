@@ -75,7 +75,7 @@ const ProductList = () => {
       <AdminMenu />
       <div className="md:w-full p-3">
         <div className="text-2xl font-semibold mb-6 text-center">
-          Create Product
+          Add Product
         </div>
 
         {imageUrl && (
@@ -187,7 +187,7 @@ const ProductList = () => {
 
           <button
             onClick={handleSubmit}
-            className="py-4 px-10 mt-5 rounded-lg text-lg font-bold bg-pink-600"
+            className="py-4 px-10 mt-5 rounded-lg text-lg font-bold bg-sky-600"
           >
             Submit
           </button>

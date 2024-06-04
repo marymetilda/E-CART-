@@ -119,9 +119,9 @@ const AdminDashboard = () => {
           {items.map((item) => (
             <div
               key={item.title}
-              className="rounded-lg bg-black p-5 min-w-[16rem] w-1/3 mt-5 flex items-center justify-start gap-12 lg:block"
+              className="rounded-lg bg-sky-950 p-5 min-w-[16rem] w-1/3 mt-5 flex items-center justify-start gap-12 lg:block"
             >
-              <div className="font-bold rounded-full w-[3rem] h-fit bg-pink-500 text-center p-3">
+              <div className="font-bold rounded-full w-[3rem] h-fit bg-sky-500 text-center p-3">
                 $
               </div>
               <div>
@@ -135,7 +135,12 @@ const AdminDashboard = () => {
         </div>
 
         <div className="lg:pl-[6vw] mt-[4rem] w-full h-fit">
-          <Chart options={state.options} series={state.series} type="line" />
+          <Chart
+            options={state.options}
+            series={state.series}
+            type="line"
+            width="80%"
+          />
         </div>
         <div className="lg:pl-[6vw] mt-[4rem] overflow-x-auto">
           <OrderList />

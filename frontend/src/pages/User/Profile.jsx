@@ -49,9 +49,7 @@ const Profile = () => {
     <div className="container mx-auto p-4">
       <div className="flex flex-col justify-center items-center md:flex">
         <div className="w-full lg:w-1/3">
-          <h2 className="text-2xl font-semibold mb-4 text-white">
-            Update Profile
-          </h2>
+          <h2 className="text-2xl font-semibold mb-4 text-white">Profile</h2>
         </div>
         <div className="w-full lg:w-1/2">
           <form onSubmit={submitHandler}>
@@ -97,14 +95,14 @@ const Profile = () => {
             <div className="flex justify-between">
               <button
                 type="submit"
-                className="bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-600"
+                className="bg-sky-500 text-white py-2 px-4 rounded hover:bg-sky-600"
               >
                 Update
               </button>
 
               <Link
                 to="/user-orders"
-                className="bg-pink-600 text-white py-2 px-4 rounded hover:bg-pink-700"
+                className="bg-sky-600 text-white py-2 px-4 rounded hover:bg-sky-700"
               >
                 My Orders
               </Link>

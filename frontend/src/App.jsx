@@ -7,7 +7,7 @@ function App() {
   return (
     <div
       id="wrapper"
-      className="bg-black min-h-screen max-h-screen overflow-auto"
+      className="text-slate-300 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-600 to-slate-900 min-h-screen max-h-screen overflow-auto font-garamond"
     >
       <ToastContainer />
       <Navigation />
