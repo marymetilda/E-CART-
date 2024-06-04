@@ -1,24 +1,19 @@
 import Message from "../../components/Message";
 import Loader from "../../components/Loader";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useGetOrdersQuery } from "../../redux/api/orderApiSlice";
 import AdminMenu from "./AdminMenu";
+import LogoContainer from "../../components/LogoContainer";
 
 const OrderList = () => {
   const { data: orders, isLoading, error } = useGetOrdersQuery();
+  const location = useLocation();
 
   return (
     <>
-      <div className="w-full pl-[6vw] lg:py-4">
-        <Link to="/">
-          <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
-            INFINITY
-          </p>
-        </Link>
-        <p className="text-center lg:text-left text-sm">
-          Give you infinite meanings in a limited amount of time!
-        </p>
-      </div>
+      {location.pathname !== "/admin/dashboard" && (
+        <LogoContainer className="w-full pl-[6vw] lg:py-4" />
+      )}
       <div className="mt-[2rem] lg:mt-0 ml-[2rem] text-4xl font-bold pb-12 text-center">
         All Orders
       </div>
@@ -29,7 +24,9 @@ const OrderList = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
-        <div className="w-full lg:pl-[5vw] px-8">
+        <div
+          className={`w-full ${location.pathname !== "/admin/dashboard" ? "px-8 lg:pl-[5vw]" : "pl-0"}`}
+        >
           <AdminMenu />
           <table className="w-full text-center">
             <thead className="w-full">

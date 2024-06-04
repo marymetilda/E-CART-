@@ -9,7 +9,7 @@ import {
   useUpdateUserMutation,
 } from "../../redux/api/usersApiSlice";
 import AdminMenu from "./AdminMenu";
-import { Link } from "react-router-dom";
+import LogoContainer from "../../components/LogoContainer";
 
 const UserList = () => {
   const { data: users, refetch, isLoading, error } = useGetUsersQuery();
@@ -56,16 +56,7 @@ const UserList = () => {
   };
   return (
     <>
-      <div className="w-full pl-[6vw] lg:py-4">
-        <Link to="/">
-          <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
-            INFINITY
-          </p>
-        </Link>
-        <p className="text-center lg:text-left text-sm">
-          Give you infinite meanings in a limited amount of time!
-        </p>
-      </div>
+      <LogoContainer className="w-full pl-[6vw] lg:py-4" />
       <div className="p-4">
         <h1 className="text-4xl font-semibold mb-12 text-white text-center">
           Users

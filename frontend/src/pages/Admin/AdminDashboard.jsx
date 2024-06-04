@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import AdminMenu from "./AdminMenu";
 import OrderList from "./OrderList";
 import Loader from "../../components/Loader";
+import LogoContainer from "../../components/LogoContainer";
 
 const AdminDashboard = () => {
   const { data: sales, isLoading } = useGetTotalSalesQuery();
@@ -113,15 +114,16 @@ const AdminDashboard = () => {
 
   return (
     <>
+      <LogoContainer className="w-full lg:py-4 lg:pl-[5vw]" />
       <AdminMenu />
       <section className="xl:ml-[4rem] md:ml-0 overflow-x-hidden">
         <div className="w-full lg:pl-[6vw] flex justify-around flex-wrap">
           {items.map((item) => (
             <div
               key={item.title}
-              className="rounded-lg bg-sky-950 p-5 min-w-[16rem] w-1/3 mt-5 flex items-center justify-start gap-12 lg:block"
+              className="rounded-lg p-5 min-w-[16rem] w-1/3 mt-5 flex items-center justify-start gap-12 lg:block"
             >
-              <div className="font-bold rounded-full w-[3rem] h-fit bg-sky-500 text-center p-3">
+              <div className="font-bold rounded-full w-[3rem] h-fit bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-500 to-slate-90 text-center p-3">
                 $
               </div>
               <div>
@@ -134,7 +136,7 @@ const AdminDashboard = () => {
           ))}
         </div>
 
-        <div className="lg:pl-[6vw] mt-[4rem] w-full h-fit">
+        <div className="lg:pl-[6vw] mt-[4rem] w-full h-fit bg-slate-800">
           <Chart
             options={state.options}
             series={state.series}
@@ -142,7 +144,7 @@ const AdminDashboard = () => {
             width="80%"
           />
         </div>
-        <div className="lg:pl-[6vw] mt-[4rem] overflow-x-auto">
+        <div className="mt-[4rem] overflow-x-auto">
           <OrderList />
         </div>
       </section>

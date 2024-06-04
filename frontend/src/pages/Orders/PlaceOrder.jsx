@@ -7,6 +7,7 @@ import ProgressSteps from "../../components/ProgressSteps";
 import Loader from "../../components/Loader";
 import { useCreateOrderMutation } from "../../redux/api/orderApiSlice";
 import { clearCartItems } from "../../redux/features/cart/cartSlice";
+import LogoContainer from "../../components/LogoContainer";
 
 const PlaceOrder = () => {
   const navigate = useNavigate();
@@ -44,16 +45,7 @@ const PlaceOrder = () => {
 
   return (
     <>
-      <div className="w-full pl-[6vw] lg:py-4">
-        <Link to="/">
-          <p className="text-[32px] font-bold tracking-wider text-center lg:text-left">
-            INFINITY
-          </p>
-        </Link>
-        <p className="text-center lg:text-left text-sm">
-          Give you infinite meanings in a limited amount of time!
-        </p>
-      </div>
+      <LogoContainer className="w-full pl-[6vw] lg:py-4" />
       <h2 className="text-4xl font-semibold mb-5 w-full text-center pb-10">
         Order Summary
       </h2>
