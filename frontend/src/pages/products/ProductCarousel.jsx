@@ -1,4 +1,4 @@
-import { useGetTopProductsQuery } from "../../redux/api/productApiSlice";
+import { useGetNewProductsQuery } from "../../redux/api/productApiSlice";
 import Message from "../../components/Message";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -14,7 +14,7 @@ import {
 import { IoRibbonSharp } from "react-icons/io5";
 
 const ProductCarousel = () => {
-  const { data: products, isLoading, error } = useGetTopProductsQuery();
+  const { data: products, isLoading, error } = useGetNewProductsQuery();
 
   const settings = {
     dots: false,
@@ -116,3 +116,4 @@ const ProductCarousel = () => {
 };
 
 export default ProductCarousel;
+
