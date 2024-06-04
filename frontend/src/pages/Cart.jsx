@@ -37,7 +37,7 @@ const Cart = () => {
               {cartItems.map((item) => (
                 <div
                   key={item._id}
-                  className="flex items-center mb-[1rem] pb-2"
+                  className="flex items-center justify-between flex-wrap gap-4 mb-[1rem] pb-2"
                 >
                   <div className="w-[5rem] h-[5rem]">
                     <img
@@ -59,33 +59,35 @@ const Cart = () => {
                     </div>
                   </div>
 
-                  <div className="w-24">
-                    <select
-                      className="w-full p-1 border rounded text-black bg-gray-500"
-                      value={item.qty}
-                      onChange={(e) =>
-                        addToCartHandler(item, Number(e.target.value))
-                      }
-                    >
-                      {[...Array(item.countInStock).keys()].map((x) => (
-                        <option key={x + 1} value={x + 1}>
-                          {x + 1}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div>
-                    <button
-                      className="text-red-500 mr-[5rem]"
-                      onClick={() => removeFromCartHandler(item._id)}
-                    >
-                      <FaTrash className="ml-[1rem] mt-[0.5rem]" />
-                    </button>
+                  <div className="flex">
+                    <div className="w-24">
+                      <select
+                        className="w-full p-1 border rounded text-black bg-gray-500"
+                        value={item.qty}
+                        onChange={(e) =>
+                          addToCartHandler(item, Number(e.target.value))
+                        }
+                      >
+                        {[...Array(item.countInStock).keys()].map((x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <>
+                      <button
+                        className="text-red-500 lg:mr-[5rem]"
+                        onClick={() => removeFromCartHandler(item._id)}
+                      >
+                        <FaTrash className="ml-[1rem] mt-[0.5rem]" />
+                      </button>
+                    </>
                   </div>
                 </div>
               ))}
 
-              <div className="mt-8 w-[40rem]">
+              <div className="mt-8 w-full lg:w-[40rem]">
                 <div className="p-4 rounded-lg">
                   <h2 className="text-xl font-semibold mb-2">
                     Items (

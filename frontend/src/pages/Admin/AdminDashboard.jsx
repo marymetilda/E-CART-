@@ -93,51 +93,51 @@ const AdminDashboard = () => {
     }
   }, [salesDetails]);
 
+  const items = [
+    {
+      title: "Sales",
+      data: "$ " + sales?.totalSales.toFixed(2),
+      loading: isLoading,
+    },
+    {
+      title: "Customers",
+      data: customers?.length,
+      loading,
+    },
+    {
+      title: "All Orders",
+      data: orders?.totalOrders,
+      loading: loadingTotalOrders,
+    },
+  ];
+
   return (
     <>
       <AdminMenu />
-      <section className="xl:ml-[4rem] md:ml-0">
-        <div className="w-[80%] flex justify-around flex-wrap">
-          <div className="rounded-lg bg-black p-5 w-[20rem] mt-5">
-            <div className="font-bold rounded-full w-[3rem] bg-pink-500 text-center p-3">
-              $
+      <section className="xl:ml-[4rem] md:ml-0 overflow-x-hidden">
+        <div className="w-full lg:pl-[6vw] flex justify-around flex-wrap">
+          {items.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-lg bg-black p-5 min-w-[16rem] w-1/3 mt-5 flex items-center justify-start gap-12 lg:block"
+            >
+              <div className="font-bold rounded-full w-[3rem] h-fit bg-pink-500 text-center p-3">
+                $
+              </div>
+              <div>
+                <p className="lg:mt-5">{item.title}</p>
+                <h1 className="text-xl font-bold">
+                  {item.loading ? <Loader /> : item.data}
+                </h1>
+              </div>
             </div>
-            <p className="mt-5">Sales</p>
-            <h1 className="text-xl font-bold">
-              $ {isLoading ? <Loader /> : sales.totalSales.toFixed(2)}
-            </h1>
-          </div>
-
-          <div className="rounded-lg bg-black p-5 w-[20rem] mt-5">
-            <div className="font-bold rounded-full w-[3rem] bg-pink-500 text-center p-3">
-              $
-            </div>
-            <p className="mt-5">Customers</p>
-            <h1 className="text-xl font-bold">
-              {loading ? <Loader /> : customers?.length}
-            </h1>
-          </div>
-
-          <div className="rounded-lg bg-black p-5 w-[20rem] mt-5">
-            <div className="font-bold rounded-full w-[3rem] bg-pink-500 text-center p-3">
-              $
-            </div>
-            <p className="mt-5">All Orders</p>
-            <h1 className="text-xl font-bold">
-              {loadingTotalOrders ? <Loader /> : orders?.totalOrders}
-            </h1>
-          </div>
+          ))}
         </div>
 
-        <div className="ml-[10rem] mt-[4rem]">
-          <Chart
-            options={state.options}
-            series={state.series}
-            type="line"
-            width="70%"
-          />
+        <div className="lg:pl-[6vw] mt-[4rem] w-full h-fit">
+          <Chart options={state.options} series={state.series} type="line" />
         </div>
-        <div className="mt-[4rem]">
+        <div className="lg:pl-[6vw] mt-[4rem] overflow-x-auto">
           <OrderList />
         </div>
       </section>

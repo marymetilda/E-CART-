@@ -16,7 +16,7 @@ const OrderList = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
-        <table className="container mx-auto">
+        <table className="container mx-auto w-full min-w-[62rem]">
           <AdminMenu />
 
           <thead className="w-full border">
@@ -25,6 +25,7 @@ const OrderList = () => {
               <th className="text-left pl-1">ID</th>
               <th className="text-left pl-1">USER</th>
               <th className="text-left pl-1">DATA</th>
+              <th className="text-left pl-1">PRICE</th>
               <th className="text-left pl-1">PAID</th>
               <th className="text-left pl-1">DELIVERED</th>
               <th></th>

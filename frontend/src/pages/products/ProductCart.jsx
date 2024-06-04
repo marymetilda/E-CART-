@@ -14,7 +14,7 @@ const ProductCart = ({ product }) => {
   };
 
   return (
-    <div className="max-w-sm relative bg-[#1a1a1a] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full lg:max-w-sm relative bg-[#1a1a1a] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <section className="relative">
         <span className="absolute bottom-3 right-3 bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
           {product.brand}
