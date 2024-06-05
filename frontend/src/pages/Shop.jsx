@@ -165,7 +165,7 @@ const Shop = () => {
             </div>
           </div>
 
-          <div className="p-3 w-full lg:w-fit">
+          <div className="p-3 w-full flex flex-col items-center justify-center">
             <p className="text-[32px] lg:text-[40px] font-bold tracking-wider text-center lg:pb-8 lg:-mt-16">
               Shop... Smile... Repeat...
             </p>
