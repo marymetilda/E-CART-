@@ -61,7 +61,7 @@ const ProductCarousel = () => {
                 <div className="absolute top-0 left-0 flex bg-yellow-100 py-1 px-4 border-2 border-yellow-400 rounded-sm">
                   <IoRibbonSharp className="text-yellow-400" size={36} />
                   <p className="text-xl font-semibold text-yellow-400">
-                    Best Sellers
+                    {"It's New..."}
                   </p>
                 </div>
 
@@ -116,4 +116,3 @@ const ProductCarousel = () => {
 };
 
 export default ProductCarousel;
-
