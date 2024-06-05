@@ -185,7 +185,7 @@ const fetchTopProducts = asyncHandler(async (req, res) => {
 
 const fetchNewProducts = asyncHandler(async (req, res) => {
   try {
-    const products = await Product.find({}).sort({ id: -1 }).limit(5);
+    const products = await Product.find({}).limit(5).sort({ $natural: -1 });
     res.json(products);
   } catch (error) {
     console.error(error);
