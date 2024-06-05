@@ -14,7 +14,7 @@ const ProductCart = ({ product }) => {
   };
 
   return (
-    <div className="w-full lg:min-w-56 lg:max-w-sm h-96 overflow-auto relative bg-slate-800 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full lg:min-w-56 lg:max-w-sm h-96 overflow-auto relative bg-slate-800 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 scrollbar-hide">
       <section className="relative">
         <span className="absolute bottom-3 right-3 bg-slate-100 text-slate-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-slate-900 dark:text-slate-300">
           {product.brand}
